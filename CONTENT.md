@@ -65,12 +65,20 @@
 
 ## 학회 발표
 
-- [T1] 초분광 영상 기반 균사체 복합재 물성 예측 — 한국농업기계학회 2026 춘계학술대회 · 포스터 (1저자) · 2026
-- [T2] [발표 제목 미정] — 한국농업기계학회 2025 추계학술대회 · 포스터 · 2025
-- [T3] [발표 제목 미정] — CIGR 2024 (국제농업생명공학회) · 포스터 · 2024
-- [T4] [발표 제목 미정] — 한국농업기계학회 2023 춘계학술대회 · 포스터 · 2023
+- [1] Oral · 2025 · 한국농업기계학회 2025 추계학술대회 · 구두 발표
+  - KR: 드론 RGB 영상 기반 밭작물 분류를 위한 객체 인식 모델 개발
+  - EN: Development of Segmentation Model for Field Crop Classification Based on Drone RGB Imagery
+- [2] Poster · 1st Author · 2026 · 한국농업기계학회 2026 춘계학술대회 · 포스터
+  - 제목: 분광/초분광 데이터를 활용한 균사체 복합소재 기계적 물성 비파괴 예측 모델 개발
+  - 세부: Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 R² 0.78–0.89
+- [3] Poster · 1st Author · 2024 · CIGR 2024 (International Commission of Agricultural and Biosystems Engineering) · 포스터
+  - 제목(EN): Development of Kimchi Cabbage and Onion Robot Object Detection Model Based on YOLO
+  - 세부: YOLO 기반 객체 탐지, 증강 후 데이터셋 6,020장 구축
+- [4] Poster · 2023 · 한국농업기계학회 2023 춘계학술대회 · 포스터
+  - KR: 반탄화에 의한 케나프와 미사용 목재혼합 펠릿연료의 비교분석
+  - EN: Comparative Analysis of Kenaf and Unused Wood Mixed Pellet Fuel by Half-Carbonization
 
-T2–T4는 index.html의 `.talk-title`에 `[T2 발표 제목]` 등 자리표시자로 들어가 있음. 제목 확정되면 여기와 index.html 둘 다 갱신.
+Oral/Poster는 index.html에서 배지 색으로 구분(`badge-oral` 채움 / `badge-poster` 외곽선), 1st Author는 별도 `badge-author`.
 
 ## 학력 / 경력 / 자격
 

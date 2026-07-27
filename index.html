@@ -223,19 +223,21 @@
       padding: 10px 0;
     }
     .talk-row + .talk-row { border-top: 1px solid var(--rule); }
-    .talk-title { font-size: 15px; font-weight: 500; }
-    .talk-venue { font-size: 13px; color: var(--ink-muted); margin-top: 2px; }
+    .talk-badges { display: flex; gap: 6px; margin-bottom: 6px; }
     .talk-badge {
       display: inline-block;
       font-size: 11px;
       font-weight: 700;
-      color: var(--data);
-      border: 1px solid var(--data);
       border-radius: 3px;
-      padding: 1px 6px;
-      margin-right: 8px;
-      vertical-align: middle;
+      padding: 1px 7px;
+      line-height: 1.6;
     }
+    .badge-oral { background: var(--accent); color: #fff; }
+    .badge-poster { border: 1px solid var(--data); color: var(--data); }
+    .badge-author { border: 1px solid var(--ink-muted); color: var(--ink-muted); }
+    .talk-title { font-size: 15px; font-weight: 500; }
+    .talk-sub { font-size: 13px; color: var(--ink-muted); margin-top: 2px; }
+    .talk-venue { font-size: 13px; color: var(--ink-muted); margin-top: 4px; }
     .talk-year { font-size: 13px; }
 
     /* ── EDUCATION / CAREER ── */
@@ -436,28 +438,36 @@
     <div class="talk-list">
       <div class="talk-row">
         <div>
-          <div class="talk-title"><span class="talk-badge">1저자</span>초분광 영상 기반 균사체 복합재 물성 예측</div>
+          <div class="talk-badges"><span class="talk-badge badge-oral">Oral</span></div>
+          <div class="talk-title">드론 RGB 영상 기반 밭작물 분류를 위한 객체 인식 모델 개발</div>
+          <div class="talk-sub">Development of Segmentation Model for Field Crop Classification Based on Drone RGB Imagery</div>
+          <div class="talk-venue">한국농업기계학회 2025 추계학술대회 · 구두 발표</div>
+        </div>
+        <div class="talk-year mono">2025</div>
+      </div>
+      <div class="talk-row">
+        <div>
+          <div class="talk-badges"><span class="talk-badge badge-poster">Poster</span><span class="talk-badge badge-author">1st Author</span></div>
+          <div class="talk-title">분광/초분광 데이터를 활용한 균사체 복합소재 기계적 물성 비파괴 예측 모델 개발</div>
+          <div class="talk-sub">Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 <span class="num">R² 0.78–0.89</span></div>
           <div class="talk-venue">한국농업기계학회 2026 춘계학술대회 · 포스터</div>
         </div>
         <div class="talk-year mono">2026</div>
       </div>
       <div class="talk-row">
         <div>
-          <div class="talk-title">[T2 발표 제목]</div>
-          <div class="talk-venue">한국농업기계학회 2025 추계학술대회 · 포스터</div>
-        </div>
-        <div class="talk-year mono">2025</div>
-      </div>
-      <div class="talk-row">
-        <div>
-          <div class="talk-title">[T3 발표 제목]</div>
-          <div class="talk-venue">CIGR 2024 (국제농업생명공학회) · 포스터</div>
+          <div class="talk-badges"><span class="talk-badge badge-poster">Poster</span><span class="talk-badge badge-author">1st Author</span></div>
+          <div class="talk-title">Development of Kimchi Cabbage and Onion Robot Object Detection Model Based on YOLO</div>
+          <div class="talk-sub">YOLO 기반 객체 탐지, 증강 후 데이터셋 <span class="num">6,020장</span> 구축</div>
+          <div class="talk-venue">CIGR 2024 (International Commission of Agricultural and Biosystems Engineering) · 포스터</div>
         </div>
         <div class="talk-year mono">2024</div>
       </div>
       <div class="talk-row">
         <div>
-          <div class="talk-title">[T4 발표 제목]</div>
+          <div class="talk-badges"><span class="talk-badge badge-poster">Poster</span></div>
+          <div class="talk-title">반탄화에 의한 케나프와 미사용 목재혼합 펠릿연료의 비교분석</div>
+          <div class="talk-sub">Comparative Analysis of Kenaf and Unused Wood Mixed Pellet Fuel by Half-Carbonization</div>
           <div class="talk-venue">한국농업기계학회 2023 춘계학술대회 · 포스터</div>
         </div>
         <div class="talk-year mono">2023</div>
