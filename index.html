@@ -91,32 +91,6 @@
       letter-spacing: 0.02em;
     }
 
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-    .stat { background: var(--bg); padding: 14px 16px; }
-    .stat .label {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-muted);
-      letter-spacing: 0.02em;
-      margin-bottom: 6px;
-    }
-    .stat .value {
-      font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-    }
-
     .actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn {
       display: inline-flex;
@@ -317,21 +291,6 @@
         <h1>선성미 <span class="name-en">Seongmi Seon</span></h1>
         <p class="role">센서·영상 데이터 기반 품질 예측 모델 개발</p>
         <p class="org">계약연구원 · 서울대학교 산학협력단 (생체물성연구실)</p>
-      </div>
-    </div>
-
-    <div class="stats-row">
-      <div class="stat">
-        <div class="label">mIoU</div>
-        <div class="value">+20%p</div>
-      </div>
-      <div class="stat">
-        <div class="label">F1</div>
-        <div class="value">0.943</div>
-      </div>
-      <div class="stat">
-        <div class="label">추론속도</div>
-        <div class="value">1.86×</div>
       </div>
     </div>
 
