@@ -21,3 +21,6 @@ package-lock.json
 
 # Local working duplicates
 *.bak
+
+# Personal resume (contains personal info, print-to-PDF locally only)
+resume.html
