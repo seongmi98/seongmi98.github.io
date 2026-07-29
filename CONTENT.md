@@ -49,11 +49,11 @@
 - Tags: Hyperspectral Imaging, PLSR / ANN, SAM2
 - Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
 
-### P.04 초분광 영상 기반 복합재 물성 분류·예측 모델 (팀 프로젝트, 축약)
+### P.04 분광·초분광·측색 데이터 기반 복합재 물성 분류·예측 모델 (팀 프로젝트, 축약)
 - 기간 / 소속: 2025.07–2025.09 · 서울대학교 생체물성연구실 · 팀 프로젝트
-- 센서 대역: Vis-NIR·NIR 포함 4종 센서
-- 요약: 데이터 수집과 모델 개발 파트로 참여, 4종 센서(Vis-NIR·NIR 포함)로 수집한 데이터에 전처리 및 특징 추출 기법 적용
-- Tags: Hyperspectral Imaging, Feature Extraction
+- 센서 대역: Vis-NIR·NIR 초분광 카메라, 분광기, 측색계 (4종 센서)
+- 요약: 데이터 수집과 모델 개발 파트로 참여, Vis-NIR·NIR 초분광 카메라·분광기·측색계 4종 센서로 수집한 데이터에 전처리 및 특징 추출 기법 적용
+- Tags: Hyperspectral Imaging, Spectroscopy, Colorimetry, Feature Extraction
 
 ## Tech Stack (텍스트 목록, 아이콘 없음)
 
