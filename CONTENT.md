@@ -57,11 +57,12 @@
 
 ## Tech Stack (텍스트 목록, 아이콘 없음)
 
-- Python
-- PyTorch, YOLOv8/v11, RT-DETR, EfficientDet, Faster R-CNN, Mask2Former, SAM2
-- PLSR, ANN, 분광 전처리 (SNV, MSC, Savitzky-Golay, 미분)
-- Vis-NIR & NIR 초분광, RGB, Depth 센서
-- Git, Autodesk Inventor
+- Language: Python
+- ML/DL: PyTorch · YOLO · OpenCV
+- Data: NumPy · Pandas · 분광 데이터 전처리 및 회귀 모델링
+- Vision: Object Detection · Semantic Segmentation
+- Sensors: RGB · 초분광(Vis-NIR/NIR) · Depth
+- Tools: Git · Autodesk Inventor
 
 ## Awards / 수상
 
