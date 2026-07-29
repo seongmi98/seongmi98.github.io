@@ -51,9 +51,11 @@
 }
 
 /* ── plain project card (portfolio grid) — no thumbnail, just title + meta ── */
+/* margin-bottom (not height:100%) so rows get the same visual gap as the
+   left/right column gutter, instead of touching directly. */
 .project-card-plain {
   display: block;
-  height: 100%;
+  margin-bottom: 30px;
   padding: 28px;
   border: 1px solid #ededed;
   border-radius: 6px;
