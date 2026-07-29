@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>선성미 · Seongmi Seon — 센서·영상 데이터 기반 품질 예측 모델</title>
-        <meta name="description" content="센서·영상 데이터 기반 품질 예측 모델을 개발하는 선성미의 프로젝트, 성과 요약.">
+        <title>실시간 객체 탐지 모델 비교·선정 — 선성미</title>
+        <meta name="description" content="객체 탐지 모델 5종 비교·선정 및 레이저 제거 로봇 시스템 적용.">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -30,9 +30,9 @@
                         </button>
                         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                             <ul class="nav navbar-nav menu_nav ml-auto">
-                                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                                 <li class="nav-item"><a class="nav-link" href="resume.html" target="_blank" rel="noopener">이력서</a></li>
                             </ul>
@@ -44,18 +44,16 @@
         <!--================Header Menu Area =================-->
 
         <!--================Home Banner Area =================-->
-        <section class="home_banner_area">
-            <div class="banner_inner">
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="banner_content text-center">
-                                <img src="assets/profile.jpg" alt="선성미" class="banner_avatar">
-                                <h5>Hello, I'm</h5>
-                                <h2>선성미 <span style="font-weight:400;">Seongmi Seon</span></h2>
-                                <p class="role-line">I'm a <span class="role-rotator" id="roleRotator">Data Scientist</span></p>
-                                <p>센서·영상 데이터 기반 품질 예측 모델 개발. RGB·초분광·뎁스 등 서로 다른 성질의 데이터를 다루며 수집 설계부터 전처리, 학습, 검증까지 분석 파이프라인 전 과정을 수행해 왔습니다.</p>
-                            </div>
+                    <div class="banner_content text-center">
+                        <h2>Project Detail</h2>
+                        <div class="page_link">
+                            <a href="index.html">Home</a>
+                            <a href="portfolio.html">Portfolio</a>
+                            <a href="project-detection.html">객체 탐지 모델 비교·선정</a>
                         </div>
                     </div>
                 </div>
@@ -63,54 +61,53 @@
         </section>
         <!--================End Home Banner Area =================-->
 
-        <!--================Welcome Area =================-->
-        <section class="welcome_area p_120">
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120">
             <div class="container">
-                <div class="row welcome_inner">
-                    <div class="col-lg-6">
-                        <div class="welcome_text">
-                            <h4>About Myself</h4>
-                            <p>
-                                센서와 영상 데이터로 대상의 상태를 정량적으로 예측하는 모델을 만듭니다. RGB·초분광·뎁스 등
-                                서로 다른 성질의 데이터를 다루며 수집 설계부터 전처리, 학습, 검증까지 분석 파이프라인 전
-                                과정을 수행해 왔습니다. 여러 모델을 비교해 근거를 갖고 하나를 선택하는 일, 그 선택이 실제
-                                운영 환경에서 유지되는지 검증하는 일에 강점이 있습니다.
-                            </p>
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="band-bar-wrap">
+                                <div class="band-bar band-rgb"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio_right_text">
+                                <h4>실시간 객체 탐지 모델 비교·선정 및 로봇 시스템 적용</h4>
+                                <ul class="list">
+                                    <li><span>기간</span>: <b class="mono">2024.01–2024.12</b></li>
+                                    <li><span>소속</span>: 국립순천대학교 · 석사 학위논문</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="tools_expert">
-                            <h3>Tech Stack</h3>
-                            <ul class="stack-list">
-                                <li><span class="stack-label">Language</span><span class="stack-value">Python</span></li>
-                                <li><span class="stack-label">Vision</span><span class="stack-value">Object Detection · Semantic Segmentation (PyTorch 기반)</span></li>
-                                <li><span class="stack-label">Spectral</span><span class="stack-value">분광 데이터 전처리 및 회귀 모델링</span></li>
-                                <li><span class="stack-label">Sensors</span><span class="stack-value">RGB · 초분광(Vis-NIR/NIR) · Depth</span></li>
-                                <li><span class="stack-label">Tools</span><span class="stack-value">Git, Autodesk Inventor</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--================End Welcome Area =================-->
 
-        <!--================Projects Area =================-->
-        <section class="p_120">
-            <div class="container">
-                <div class="main_title">
-                    <h2>Recent Projects</h2>
+                    <dl>
+                        <div class="spec-row">
+                            <dt>문제</dt>
+                            <dd>좁은 간격으로 혼재된 두 대상을 로봇이 실시간으로 구분해야 함</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt>접근</dt>
+                            <dd>직접 수집·라벨링한 이미지 234장으로 객체 탐지 모델 5종(YOLOv8, YOLOv11, RT-DETR, EfficientDet, Faster R-CNN) 학습·비교</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt>결과</dt>
+                            <dd>대상 A는 YOLOv11(<span class="num">F1 0.943</span>, <span class="num">mAP@0.5 0.970</span>), 대상 B는 RT-DETR(<span class="num">F1 0.803</span>, <span class="num">mAP@0.5 0.889</span>) 최우수. 추론 속도(RT-DETR 대비 <span class="num">1.86×</span>)를 함께 고려해 YOLOv11을 탑재 모델로 최종 선정, 레이저 제거 로봇 시스템에 적용</dd>
+                        </div>
+                    </dl>
+
+                    <div class="tags">
+                        <span class="tag">YOLOv11</span>
+                        <span class="tag">RT-DETR</span>
+                        <span class="tag">EfficientDet</span>
+                        <span class="tag">Faster R-CNN</span>
+                    </div>
+                    <p style="margin-top:20px;"><a href="https://github.com/seongmi98" target="_blank" rel="noopener">GitHub에서 보기 →</a></p>
                 </div>
-                <ul class="project-title-list">
-                    <li><a href="project-detection.html">실시간 객체 탐지 모델 비교·선정 및 로봇 시스템 적용</a></li>
-                    <li><a href="project-segmentation.html">항공 RGB 영상 시맨틱 분할 및 학습 전략 최적화</a></li>
-                    <li><a href="project-hyperspectral.html">초분광 영상 기반 비파괴 함수율 예측 회귀 모델</a></li>
-                    <li><a href="project-composite.html">초분광 영상 기반 복합재 물성 분류·예측 모델</a></li>
-                </ul>
-                <p class="text-center" style="margin-top:20px;"><a href="portfolio.html" class="banner_btn" style="display:inline-flex;">전체 포트폴리오 보기</a></p>
             </div>
         </section>
-        <!--================End Projects Area =================-->
+        <!--================End Portfolio Details Area =================-->
 
         <!--================Footer Area =================-->
         <footer class="footer_area p_120">
@@ -158,21 +155,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/bootstrap.min.js"></script>
         <script src="js/stellar.js"></script>
         <script src="js/theme.js"></script>
-        <script>
-            (function () {
-                var roles = ['Data Scientist', 'Machine Learning Engineer', 'Computer Vision Researcher'];
-                var el = document.getElementById('roleRotator');
-                if (!el) return;
-                var i = 0;
-                setInterval(function () {
-                    el.style.opacity = 0;
-                    setTimeout(function () {
-                        i = (i + 1) % roles.length;
-                        el.textContent = roles[i];
-                        el.style.opacity = 1;
-                    }, 300);
-                }, 2200);
-            })();
-        </script>
     </body>
 </html>
