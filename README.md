@@ -17,7 +17,7 @@ Live at: <https://seongmi98.github.io>
 | File | Purpose |
 |---|---|
 | `index.html` | Home — hero, intro + headline metrics, tech stack summary, project previews |
-| `about-us.html` | About — full intro, detailed tech stack, education/career/certification, awards, presentations |
+| `about.html` | About — full intro, detailed tech stack, education/career/certification, awards, presentations |
 | `portfolio.html` | Portfolio — filterable grid of all 4 research projects |
 | `project-detection.html` | Object detection model comparison & robot deployment |
 | `project-segmentation.html` | Aerial RGB semantic segmentation |
