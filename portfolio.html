@@ -61,7 +61,7 @@
         <!--================End Home Banner Area =================-->
 
         <!--================Projects Area =================-->
-        <section class="projects_area p_120">
+        <section class="p_120">
             <div class="container">
                 <div class="main_title">
                     <h2>연구 프로젝트</h2>
@@ -150,8 +150,24 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/stellar.js"></script>
-        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-        <script src="vendors/isotope/isotope-min.js"></script>
         <script src="js/theme.js"></script>
+        <script>
+            (function () {
+                var buttons = document.querySelectorAll('.filter li');
+                var cards = document.querySelectorAll('.projects_inner > div');
+                buttons.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        buttons.forEach(function (b) { b.classList.remove('active'); });
+                        btn.classList.add('active');
+                        var filter = btn.getAttribute('data-filter');
+                        cards.forEach(function (card) {
+                            var show = filter === '*' || card.classList.contains(filter.slice(1));
+                            card.style.display = show ? '' : 'none';
+                        });
+                    });
+                });
+            })();
+        </script>
     </body>
 </html>
