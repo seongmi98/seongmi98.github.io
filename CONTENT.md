@@ -38,7 +38,7 @@
 - 접근: 대상군을 분리해 학습하는 전략 설계, Mask2Former 기반 분할 모델에 적용. 전국 3개년(2022–2024) 데이터를 시간적으로 분리해 평가 설계 구성, 촬영 고도(10–100m)별 일반화 성능 검증
 - 결과: mIoU 57.25% → 77.33% (+20%p) 개선. 저고도(10–30m) 학습이 가장 우수한 일반화 성능
 - Tags: Semantic Segmentation, Mask2Former, Temporal Split Validation
-- Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
+- Detail: https://github.com/seongmi98/drone-cropgroup-segmentation
 
 ### P.03 초분광 영상 기반 비파괴 함수율 예측 회귀 모델
 - 기간 / 소속: 2025.09–2025.12 · 서울대학교 생체물성연구실
