@@ -47,6 +47,7 @@
 - 접근: Vis-NIR·NIR 초분광 카메라 2종으로 데이터 수집 시스템 구축, 전처리 기법(SNV, MSC, SG, 1·2차 미분) 비교로 최적 파이프라인 도출, PLSR·ANN 회귀 모델을 R²·RMSE 기준 비교 평가
 - 결과: SAM2 기반 반자동 스펙트럼 세그멘테이션으로 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축
 - Tags: Hyperspectral Imaging, PLSR / ANN, SAM2
+- Detail: https://github.com/seongmi98/jujube-hsi-moisture
 - Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
 
 ### P.04 분광·초분광·측색 데이터 기반 복합재 물성 분류·예측 모델 (팀 프로젝트, 축약)
