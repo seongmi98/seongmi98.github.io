@@ -246,3 +246,57 @@
   .info-row, .spec-row { grid-template-columns: 1fr; gap: 4px; }
   .talk-row { grid-template-columns: 1fr; }
 }
+
+/* ── side project row (portfolio page) — deliberately lighter than
+   .project-card-plain: dashed border, smaller type, no hover shadow.
+   Keeps the 4 main research projects visually primary. ── */
+.side_projects_area {
+  border-top: 1px solid #ededed;
+  margin-top: 20px;
+  padding-top: 60px;
+}
+.side_projects_area .main_title h2 { font-size: 26px; }
+.side-project-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px dashed #ededed;
+  text-decoration: none;
+}
+.side-project-row:first-child { border-top: none; }
+.side-project-row .side-project-main {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.side-project-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #777777;
+  border: 1px solid #ededed;
+  border-radius: 3px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+}
+.side-project-row h5 {
+  font-family: 'Heebo', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0;
+}
+.side-project-row:hover h5 { color: #8490ff; }
+.side-project-row p {
+  font-size: 13px;
+  color: #777777;
+  margin: 4px 0 0;
+  flex-basis: 100%;
+}
+.side-project-row .side-project-link {
+  font-size: 13px;
+  color: #777777;
+  white-space: nowrap;
+}

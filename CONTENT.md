@@ -56,6 +56,14 @@
 - 요약: 데이터 수집과 모델 개발 파트로 참여, Vis-NIR·NIR 초분광 카메라·분광기·측색계 4종 센서로 수집한 데이터에 전처리 및 특징 추출 기법 적용
 - Tags: Hyperspectral Imaging, Spectroscopy, Colorimetry, Feature Extraction
 
+### 기타 (Side Project) — portfolio.html 하단, 메인 4개보다 작은 비중으로 표시
+
+- 대전 공공자전거 '타슈' 대여 데이터 이상치 검증 및 재분석
+- 요약: 공공데이터 132만 건 중 '타슈관제센터 정비입고/정비대기'가 실제 대여소가 아니라 자전거 회수·정비 운영 로그임을 발견(평균 이용시간 4배 이상 차이로 검증), 이를 제외하고 인기 대여소·경로 재분석
+- Tags: Python, Pandas, EDA, Outlier Detection
+- Detail: https://github.com/seongmi98/tashu-bikeshare-data-quality
+- 스타일 원칙: 메인 프로젝트 카드(.project-card-plain)와 다른 가벼운 톤(.side-project-row: 대시 보더, 작은 글씨, 지표 강조 없음)으로 표시해 "센서·영상 데이터" 메인 내러티브를 흐리지 않도록 함
+
 ## Tech Stack (텍스트 목록, 아이콘 없음)
 
 - Language: Python
