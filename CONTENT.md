@@ -40,14 +40,16 @@
 - Tags: Semantic Segmentation, Mask2Former, Temporal Split Validation
 - Detail: https://github.com/seongmi98/drone-cropgroup-segmentation
 
-### P.03 초분광 영상 기반 비파괴 함수율 예측 회귀 모델
-- 기간 / 소속: 2025.09–2025.12 · 서울대학교 생체물성연구실
-- 센서 대역: Vis-NIR (400–1000nm) · NIR (900–1700nm)
-- 문제: 대상을 파괴하지 않고 내부 수분 상태를 정량 예측해야 함
-- 접근: Vis-NIR·NIR 초분광 카메라 2종으로 데이터 수집 시스템 구축, 전처리 기법(SNV, MSC, SG, 1·2차 미분) 비교로 최적 파이프라인 도출, PLSR·ANN 회귀 모델을 R²·RMSE 기준 비교 평가
-- 결과: SAM2 기반 반자동 스펙트럼 세그멘테이션으로 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축
-- Tags: Hyperspectral Imaging, PLSR / ANN, SAM2
+### P.03 초분광 영상 기반 대추 함수율 비파괴 예측
+- 기간 / 소속: 2025.09–2025.12 · 서울대학교 생체물성연구실 · 산림청 국가 R&D 과제(임산물 산지종합유통센터 자동화) 서울대 파트
+- 센서 대역: Specim FX10 (400–1000nm, VNIR, 224밴드) · KSP-3 (900–1700nm, NIR, 640밴드, 수분 O-H 흡수대 포함)
+- 배경: 대추 수분 함량이 저장성·품질 좌우. 기존 측정(오븐건조법 등)은 파괴적이거나 표면 접촉식 — 비파괴 전체표면 측정 필요
+- 접근: 카메라 2종 촬영 시스템 구축 → SAM2 반자동 세그멘테이션 → 반사율 추출(Savitzky-Golay 스무딩) → 전처리 기법(SNV, MSC, SG, 1·2차 미분) 비교 → PLSR 회귀 모델 K-Fold 교차검증, R²·RMSE 평가
+- 결과: 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축. 원본 데이터·라벨 비공개라 최종 R²/RMSE는 미공개
+- 이미지: docs/figures 참고 — reflectance_ksp.png, reflectance_specim.png, preprocessing_comparison_ksp.png, plsr_structure_diagram.png (다운로드해 img/case-studies/jujube/에 저장, 사이트에 삽입 완료)
+- Tags: Hyperspectral Imaging, PLSR, SAM2
 - Detail: https://github.com/seongmi98/jujube-hsi-moisture
+- 스타일 원칙: 프로젝트 상세 페이지는 압축된 문제/접근/결과 대신 배경-데이터수집-라벨링-반사율추출-전처리와모델링-결과 순서의 케이스 스터디 서술(.case-section)로 작성, 실제 이미지가 있으면 .case-image-slot/.case-image-row에 삽입, 없으면 "(추가 예정)" placeholder 유지. 문체는 음슴체(간결体), 실제 공개되지 않은 수치는 지어내지 않음
 - Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
 
 ### P.04 분광·초분광·측색 데이터 기반 복합재 물성 분류·예측 모델 (팀 프로젝트, 축약)

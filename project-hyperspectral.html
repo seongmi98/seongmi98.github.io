@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>초분광 비파괴 함수율 예측 — 선성미</title>
-        <meta name="description" content="Vis-NIR·NIR 초분광 영상 기반 비파괴 함수율 예측 회귀 모델.">
+        <title>초분광 영상 기반 대추 함수율 비파괴 예측 — 선성미</title>
+        <meta name="description" content="초분광 영상(Specim FX10, KSP-3)으로 대추 함수율을 비파괴 예측하는 PLSR 회귀 파이프라인.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://seongmi98.github.io/project-hyperspectral">
-        <meta property="og:title" content="초분광 비파괴 함수율 예측 — 선성미">
-        <meta property="og:description" content="Vis-NIR·NIR 초분광 영상 기반 비파괴 함수율 예측 회귀 모델.">
+        <meta property="og:title" content="초분광 영상 기반 대추 함수율 비파괴 예측 — 선성미">
+        <meta property="og:description" content="초분광 영상(Specim FX10, KSP-3)으로 대추 함수율을 비파괴 예측하는 PLSR 회귀 파이프라인.">
         <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="초분광 비파괴 함수율 예측 — 선성미">
-        <meta name="twitter:description" content="Vis-NIR·NIR 초분광 영상 기반 비파괴 함수율 예측 회귀 모델.">
+        <meta name="twitter:title" content="초분광 영상 기반 대추 함수율 비파괴 예측 — 선성미">
+        <meta name="twitter:description" content="초분광 영상(Specim FX10, KSP-3)으로 대추 함수율을 비파괴 예측하는 PLSR 회귀 파이프라인.">
         <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
@@ -62,7 +62,7 @@
                         <div class="page_link">
                             <a href="./">Home</a>
                             <a href="portfolio">Portfolio</a>
-                            <a href="project-hyperspectral">초분광 비파괴 함수율 예측</a>
+                            <a href="project-hyperspectral">대추 함수율 비파괴 예측</a>
                         </div>
                     </div>
                 </div>
@@ -82,10 +82,10 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio_right_text">
-                                <h4>초분광 영상 기반 비파괴 함수율 예측 회귀 모델</h4>
+                                <h4>초분광 영상 기반 대추 함수율 비파괴 예측</h4>
                                 <ul class="list">
                                     <li><span>기간</span>: <b class="mono">2025.09–2025.12</b></li>
-                                    <li><span>소속</span>: 서울대학교 생체물성연구실</li>
+                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 산림청 국가 R&D 과제(임산물 산지종합유통센터 자동화) 서울대 파트</li>
                                 </ul>
                             </div>
                         </div>
@@ -93,12 +93,12 @@
 
                     <div class="case-section">
                         <h3>배경</h3>
-                        <p>대추 수분 함량, 저장성과 품질 좌우함. 기존 측정 방식은 파괴적이거나 표면 일부만 접촉식으로 측정 — 한계 있음. 비파괴로 전체 표면 수분 분포까지 보기 위해 초분광 영상 선택함.</p>
+                        <p>대추 수분 함량, 저장성과 품질 좌우함. 기존 측정 방식은 오븐건조법 등 파괴적이거나 표면 일부만 접촉식으로 측정 — 한계 있음. 비파괴로 전체 표면 수분 분포까지 보기 위해 초분광 영상 선택함.</p>
                     </div>
 
                     <div class="case-section">
                         <h3>데이터 수집</h3>
-                        <p>Vis-NIR(400–1000nm), NIR(900–1700nm) 카메라 2종으로 촬영 시스템 각각 구축. 파장대 다른 만큼 조명·거치 세팅도 따로 진행.</p>
+                        <p>Specim FX10(400–1000nm, VNIR, 224밴드)과 KSP-3(900–1700nm, NIR, 640밴드) 카메라 2종으로 촬영 시스템 각각 구축. KSP-3는 수분의 O-H 결합 흡수대를 포함해 함수율 예측에 특히 유리함.</p>
                         <div class="case-image-slot">데이터 수집 시스템 사진 (추가 예정)</div>
                     </div>
 
@@ -108,20 +108,29 @@
                     </div>
 
                     <div class="case-section">
+                        <h3>반사율 추출</h3>
+                        <p>마스크 영역 평균 스펙트럼으로 반사율 계산 (Reflectance = (Sample − Dark) / (White − Dark)). Savitzky-Golay 스무딩 적용 후 센서별 스펙트럼 확인.</p>
+                        <div class="case-image-row">
+                            <img src="img/case-studies/jujube/reflectance_ksp.png" alt="KSP-3 반사율 스펙트럼">
+                            <img src="img/case-studies/jujube/reflectance_specim.png" alt="Specim FX10 반사율 스펙트럼">
+                        </div>
+                    </div>
+
+                    <div class="case-section">
                         <h3>전처리와 모델링</h3>
-                        <p>초분광 데이터 특성상 산란·노이즈 영향 큼. SNV, MSC, Savitzky-Golay, 1·2차 미분 등 전처리 기법 조합 비교. PLSR·ANN 회귀 모델을 R², RMSE 기준으로 비교 평가.</p>
-                        <div class="case-image-slot">전처리 전/후 스펙트럼 비교 (추가 예정)</div>
+                        <p>원본 반사율은 산란·노이즈 영향 큼. SNV, MSC, Savitzky-Golay, 1·2차 미분 등 전처리 기법 조합 비교 후 Savitzky-Golay 단독 적용으로 확정. 이렇게 정리한 스펙트럼으로 PLSR 회귀 모델을 K-Fold 교차검증, R²·RMSE 기준으로 평가.</p>
+                        <div class="case-image-slot"><img src="img/case-studies/jujube/preprocessing_comparison_ksp.png" alt="전처리 전후 스펙트럼 비교"></div>
+                        <div class="case-image-slot"><img src="img/case-studies/jujube/plsr_structure_diagram.png" alt="PLSR 모델 구조"></div>
                     </div>
 
                     <div class="case-section">
                         <h3>결과</h3>
-                        <p>SAM2 기반 반자동 세그멘테이션으로 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축.</p>
-                        <div class="case-image-slot">결과 그래프 (추가 예정)</div>
+                        <p>SAM2 기반 반자동 세그멘테이션으로 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축. 원본 초분광 데이터와 측정 라벨은 비공개라 최종 R²·RMSE 수치는 코드 저장소에 공개하지 않음.</p>
                     </div>
 
                     <div class="tags">
                         <span class="tag">Hyperspectral Imaging</span>
-                        <span class="tag">PLSR / ANN</span>
+                        <span class="tag">PLSR</span>
                         <span class="tag">SAM2</span>
                     </div>
                     <p style="margin-top:20px;"><a href="https://github.com/seongmi98/jujube-hsi-moisture" target="_blank" rel="noopener">GitHub에서 보기 →</a></p>
