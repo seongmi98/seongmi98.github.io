@@ -91,20 +91,33 @@
                         </div>
                     </div>
 
-                    <dl>
-                        <div class="spec-row">
-                            <dt>문제</dt>
-                            <dd>대상을 파괴하지 않고 내부 수분 상태를 정량 예측해야 함</dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt>접근</dt>
-                            <dd>Vis-NIR·NIR 초분광 카메라 2종으로 데이터 수집 시스템 구축, 전처리 기법(SNV, MSC, SG, 1·2차 미분) 비교로 최적 파이프라인 도출, PLSR·ANN 회귀 모델을 R²·RMSE 기준 비교 평가</dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt>결과</dt>
-                            <dd>SAM2 기반 반자동 스펙트럼 세그멘테이션으로 라벨링 정확도 <span class="num">95%</span> 이상 확보, 라벨링 공정 단축</dd>
-                        </div>
-                    </dl>
+                    <div class="case-section">
+                        <h3>배경</h3>
+                        <p>대추 수분 함량, 저장성과 품질 좌우함. 기존 측정 방식은 파괴적이거나 표면 일부만 접촉식으로 측정 — 한계 있음. 비파괴로 전체 표면 수분 분포까지 보기 위해 초분광 영상 선택함.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>데이터 수집</h3>
+                        <p>Vis-NIR(400–1000nm), NIR(900–1700nm) 카메라 2종으로 촬영 시스템 각각 구축. 파장대 다른 만큼 조명·거치 세팅도 따로 진행.</p>
+                        <div class="case-image-slot">데이터 수집 시스템 사진 (추가 예정)</div>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>라벨링</h3>
+                        <p>대추 영역 분리(세그멘테이션) 선행 필요. 프레임별 수작업 라벨링은 비효율적 — SAM2로 반자동화. 라벨링 정확도 <span class="num">95%</span> 이상 유지하면서 작업 시간 단축.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>전처리와 모델링</h3>
+                        <p>초분광 데이터 특성상 산란·노이즈 영향 큼. SNV, MSC, Savitzky-Golay, 1·2차 미분 등 전처리 기법 조합 비교. PLSR·ANN 회귀 모델을 R², RMSE 기준으로 비교 평가.</p>
+                        <div class="case-image-slot">전처리 전/후 스펙트럼 비교 (추가 예정)</div>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>결과</h3>
+                        <p>SAM2 기반 반자동 세그멘테이션으로 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축.</p>
+                        <div class="case-image-slot">결과 그래프 (추가 예정)</div>
+                    </div>
 
                     <div class="tags">
                         <span class="tag">Hyperspectral Imaging</span>

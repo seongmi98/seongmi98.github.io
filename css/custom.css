@@ -204,6 +204,32 @@
 }
 .spec-row dd { font-size: 15px; line-height: 1.75; color: #222222; }
 
+/* ── project case-study sections (fuller write-up, replaces spec-row on
+   projects with images/graphs to show) ── */
+.case-section { margin: 32px 0; }
+.case-section h3 {
+  font-family: 'Heebo', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 10px;
+}
+.case-section p { font-size: 15px; line-height: 1.8; color: #333333; }
+.case-image-slot {
+  margin-top: 16px;
+  min-height: 220px;
+  border: 1px dashed #d4d4d4;
+  border-radius: 6px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #999999;
+  text-align: center;
+  padding: 20px;
+}
+
 .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
 .tag {
   font-size: 12px;
