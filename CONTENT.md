@@ -8,7 +8,7 @@
 - 직무 정의: 센서·영상 데이터 기반 품질 예측 모델 개발
 - 소속: 계약연구원 · 서울대학교 산학협력단 (바이오시스템공학과 생체물성연구실)
 - 핵심 수치 3개 (mono):
-  - mIoU: +20%p (57.25% → 77.33%)
+  - 작물 IoU: +12.3%p (73.6% → 85.9%, 통합 5-class → 작물군 분리 3-class, 배추)
   - F1: 0.943
   - 추론속도: 1.86×
 - 버튼: 이력서 PDF(`assets/resume.pdf`, 아직 파일 없음 — 추후 추가) / 이메일 복사 / GitHub
@@ -34,10 +34,10 @@
 ### P.02 항공 RGB 영상 시맨틱 분할 및 학습 전략 최적화
 - 기간 / 소속: 2025.03–2025.07 · 서울대학교 생체물성연구실
 - 센서 대역: RGB (가시광)
-- 문제: 항공 촬영 RGB 영상에서 4종 대상을 픽셀 단위로 구분해야 함. 단일 통합 모델의 한계 확인
-- 접근: 대상군을 분리해 학습하는 전략 설계, Mask2Former 기반 분할 모델에 적용. 전국 3개년(2022–2024) 데이터를 시간적으로 분리해 평가 설계 구성, 촬영 고도(10–100m)별 일반화 성능 검증
-- 결과: mIoU 57.25% → 77.33% (+20%p) 개선. 저고도(10–30m) 학습이 가장 우수한 일반화 성능
-- Tags: Semantic Segmentation, Mask2Former, Temporal Split Validation
+- 문제: 항공 촬영 RGB 영상에서 배추·무·양파·마늘 4종을 픽셀 단위로 구분해야 함. 특히 작물군 분리 모델이 대상 작물 없는 인근 필지를 오탐(false-positive)하는 문제 해결 필요 (직불제 이행점검에서 치명적)
+- 접근: 통합 5-class로 아키텍처(DeepLabV3+/SegNeXt/Mask2Former) 비교 후 Mask2Former 선정. 형태 유사 작물을 배추·무 / 양파·마늘 두 작물군 3-class로 분리, 비대상 작물군 background-only 이미지 10% 추가로 오탐 억제. master 5-fold 교차검증, 촬영 고도(5–100m)별 민감도 분석
+- 결과: 작물군 분리로 4작물 IoU 모두 향상(배추 +12.28%p 등), 비대상 작물군 오탐을 42.6–67.9% → 0.5–0.7%로 억제. 고도 민감도는 작물군 의존적(배추·무 중고도, 양파·마늘 고고도에서 최고)
+- Tags: Semantic Segmentation, Mask2Former, Crop-Group Modeling, False-Positive Suppression
 - Detail: https://github.com/seongmi98/drone-cropgroup-segmentation
 
 ### P.03 초분광 영상 기반 대추 함수율 비파괴 예측
