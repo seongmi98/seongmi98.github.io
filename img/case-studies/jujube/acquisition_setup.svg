@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" font-family="Pretendard, 'Malgun Gothic', system-ui, sans-serif">
+  <rect width="760" height="380" fill="#ffffff"/>
+
+  <!-- camera -->
+  <rect x="330" y="34" width="100" height="46" rx="5" fill="#0F766E"/>
+  <rect x="368" y="80" width="24" height="16" fill="#0d5f59"/>
+  <text x="380" y="62" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">line-scan</text>
+  <text x="380" y="26" font-size="12.5" fill="#14161A" text-anchor="middle">초분광 카메라 (VNIR / NIR 2종)</text>
+
+  <!-- FOV -->
+  <path d="M368 96 L300 252 L460 252 L392 96 Z" fill="#0F766E" opacity="0.07"/>
+  <line x1="368" y1="96" x2="300" y2="252" stroke="#0F766E" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.55"/>
+  <line x1="392" y1="96" x2="460" y2="252" stroke="#0F766E" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.55"/>
+
+  <!-- working distance -->
+  <line x1="500" y1="96" x2="500" y2="252" stroke="#6B7280" stroke-width="1.1"/>
+  <line x1="494" y1="96" x2="506" y2="96" stroke="#6B7280" stroke-width="1.1"/>
+  <line x1="494" y1="252" x2="506" y2="252" stroke="#6B7280" stroke-width="1.1"/>
+  <text x="512" y="178" font-size="12.5" fill="#14161A">촬영거리 93.5 cm</text>
+
+  <!-- lamps 45 deg -->
+  <g fill="#B45309">
+    <rect x="132" y="104" width="62" height="26" rx="4" transform="rotate(45 163 117)"/>
+    <rect x="566" y="104" width="62" height="26" rx="4" transform="rotate(-45 597 117)"/>
+  </g>
+  <line x1="186" y1="140" x2="322" y2="248" stroke="#B45309" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+  <line x1="574" y1="140" x2="438" y2="248" stroke="#B45309" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+  <text x="150" y="86" font-size="12.5" fill="#14161A" text-anchor="middle">할로겐 150 W</text>
+  <text x="610" y="86" font-size="12.5" fill="#14161A" text-anchor="middle">할로겐 150 W</text>
+  <text x="248" y="206" font-size="12" fill="#B45309">45°</text>
+  <text x="500" y="206" font-size="12" fill="#B45309">45°</text>
+
+  <!-- conveyor -->
+  <rect x="90" y="254" width="580" height="26" rx="13" fill="#14161A"/>
+  <rect x="98" y="262" width="564" height="10" rx="5" fill="#3a3f47"/>
+  <circle cx="104" cy="267" r="13" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <circle cx="656" cy="267" r="13" fill="none" stroke="#6B7280" stroke-width="2"/>
+
+  <!-- samples -->
+  <g fill="#8B3A2E">
+    <ellipse cx="330" cy="246" rx="17" ry="11"/>
+    <ellipse cx="372" cy="246" rx="17" ry="11"/>
+    <ellipse cx="414" cy="246" rx="17" ry="11"/>
+    <ellipse cx="246" cy="246" rx="17" ry="11" opacity="0.45"/>
+    <ellipse cx="498" cy="246" rx="17" ry="11" opacity="0.45"/>
+  </g>
+  <text x="372" y="228" font-size="12.5" fill="#14161A" text-anchor="middle">건대추 시료</text>
+
+  <!-- background -->
+  <text x="372" y="300" font-size="12" fill="#6B7280" text-anchor="middle">무반사 검정 배경</text>
+
+  <!-- scan direction -->
+  <line x1="240" y1="330" x2="504" y2="330" stroke="#0F766E" stroke-width="2"/>
+  <path d="M504 330 L494 325 L494 335 Z" fill="#0F766E"/>
+  <text x="372" y="352" font-size="12.5" font-weight="600" fill="#0F766E" text-anchor="middle">벨트 이송 · 스캔 속도 5 mm/s</text>
+</svg>

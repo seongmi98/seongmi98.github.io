@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>초분광 영상 기반 대추 함수율 비파괴 예측 — 선성미</title>
-        <meta name="description" content="초분광 영상(Specim FX10, KSP-3)으로 대추 함수율을 비파괴 예측하는 PLSR 회귀 파이프라인.">
+        <title>초분광 영상 기반 대추 함수율 비파괴 선별 — 선성미</title>
+        <meta name="description" content="초분광 영상(Specim FX10, KSP-3) 기반 대추 함수율 비파괴 선별 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://seongmi98.github.io/project-hyperspectral">
-        <meta property="og:title" content="초분광 영상 기반 대추 함수율 비파괴 예측 — 선성미">
-        <meta property="og:description" content="초분광 영상(Specim FX10, KSP-3)으로 대추 함수율을 비파괴 예측하는 PLSR 회귀 파이프라인.">
+        <meta property="og:title" content="초분광 영상 기반 대추 함수율 비파괴 선별 — 선성미">
+        <meta property="og:description" content="초분광 영상(Specim FX10, KSP-3) 기반 대추 함수율 비파괴 선별 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
         <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="초분광 영상 기반 대추 함수율 비파괴 예측 — 선성미">
-        <meta name="twitter:description" content="초분광 영상(Specim FX10, KSP-3)으로 대추 함수율을 비파괴 예측하는 PLSR 회귀 파이프라인.">
+        <meta name="twitter:title" content="초분광 영상 기반 대추 함수율 비파괴 선별 — 선성미">
+        <meta name="twitter:description" content="초분광 영상(Specim FX10, KSP-3) 기반 대추 함수율 비파괴 선별 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
         <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
@@ -62,7 +62,7 @@
                         <div class="page_link">
                             <a href="./">Home</a>
                             <a href="portfolio">Portfolio</a>
-                            <a href="project-hyperspectral">대추 함수율 비파괴 예측</a>
+                            <a href="project-hyperspectral">대추 함수율 비파괴 선별</a>
                         </div>
                     </div>
                 </div>
@@ -82,58 +82,95 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio_right_text">
-                                <h4>초분광 영상 기반 대추 함수율 비파괴 예측</h4>
+                                <h4>초분광 영상 기반 대추 함수율 비파괴 선별</h4>
                                 <ul class="list">
                                     <li><span>기간</span>: <b class="mono">2025.09–2025.12</b></li>
-                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 산림청 국가 R&D 과제(임산물 산지종합유통센터 자동화) 서울대 파트</li>
+                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 산림청 「스마트 산림경영 혁신성장 기술개발」 — 로봇기반 임산물 산지종합유통센터 자동화 (주관 KIRO · 서울대 위탁)</li>
+                                    <li><span>역할</span>: 단독 수행 — 측정 시스템 구축부터 데이터 취득·전처리·모델링·검증까지</li>
                                 </ul>
+                                <a class="repo-btn" href="https://github.com/seongmi98/jujube-hsi-moisture" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> GitHub 저장소 →</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="case-section">
                         <h3>배경</h3>
-                        <p>대추 수분 함량, 저장성과 품질 좌우함. 기존 측정 방식은 오븐건조법 등 파괴적이거나 표면 일부만 접촉식으로 측정 — 한계 있음. 비파괴로 전체 표면 수분 분포까지 보기 위해 초분광 영상 선택함.</p>
+                        <p>대추 함수율은 저장성과 유통 등급을 좌우함. 기존 측정은 오븐건조법 — 시료를 파괴해야 해서 전수 검사 불가능. 선별 라인에 붙일 수 있는 비파괴 방식이 필요했고, <b>선별 정확도 90% 이상</b>을 요구하는 국가 R&amp;D 과제의 내부 품질 파트로 수행함.</p>
                     </div>
 
                     <div class="case-section">
                         <h3>데이터 수집</h3>
-                        <p>Specim FX10(400–1000nm, VNIR, 224밴드)과 KSP-3(900–1700nm, NIR, 640밴드) 카메라 2종으로 촬영 시스템 각각 구축. KSP-3는 수분의 O-H 결합 흡수대를 포함해 함수율 예측에 특히 유리함.</p>
-                        <div class="case-image-slot">데이터 수집 시스템 사진 (추가 예정)</div>
+                        <p>Specim FX10(400–1000nm, VNIR, 224밴드)과 KSP-3(900–1700nm, NIR, 640밴드) <b>카메라 2종</b>으로 고정형 라인스캐닝 시스템 구축. 벨트 컨베이어, 할로겐 150W×2 양측 45° 조사, 스캔속도 <span class="num">5mm/s</span>, 촬영거리 <span class="num">93.5cm</span>.</p>
+                        <p>핵심은 <b>함수율 분포를 설계한 것</b>. 예측 대상 값이 좁은 구간에 몰리면 회귀가 의미를 잃기 때문에, 등급별 시료를 상온(20–25℃)·저온(0–4℃) 2개 저장군으로 나눠 보관하며 <span class="num">7회차</span>에 걸쳐 촬영함. 개체 <span class="num">327개</span>를 앞·뒤면 촬영해 스펙트럼 <span class="num">654건</span> 확보, 실측 함수율 24.3–39.6%.</p>
+                        <p>기준값은 오븐 105℃ 24시간 건조 → 데시케이터 30분 방랭 → 건·습 중량차로 산출.</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/jujube/acquisition_setup.svg" alt="초분광 영상 수집 시스템 구성도">
+                            <figcaption>고정형 라인스캐닝 초분광 영상 수집 시스템 구성</figcaption>
+                        </figure>
                     </div>
 
                     <div class="case-section">
                         <h3>라벨링</h3>
-                        <p>대추 영역 분리(세그멘테이션) 선행 필요. 프레임별 수작업 라벨링은 비효율적 — SAM2로 반자동화. 라벨링 정확도 <span class="num">95%</span> 이상 유지하면서 작업 시간 단축.</p>
+                        <p>SAM2 완전 자동 분할은 실패함 — 표면 주름과 색 변화를 여러 개체로 쪼개고, 접촉한 대추를 하나로 인식함. 포인트 프롬프트를 주는 <b>반자동 방식으로 전환</b>해 추출 정확도 <span class="num">95%</span> 이상 확보.</p>
                     </div>
 
                     <div class="case-section">
                         <h3>반사율 추출</h3>
-                        <p>마스크 영역 평균 스펙트럼으로 반사율 계산 (Reflectance = (Sample − Dark) / (White − Dark)). Savitzky-Golay 스무딩 적용 후 센서별 스펙트럼 확인.</p>
+                        <p>마스크 영역에서 Reflectance = (Sample − Dark) / (White − Dark) 계산. <b>센서별로 큐브 축 구조가 다름</b> — KSP-3는 (lines, samples, bands), Specim FX10은 ENVI BIL (lines, bands, samples). 축을 정규화한 뒤 ROI 75% 침식 → 픽셀 평균.</p>
                         <div class="case-image-row">
-                            <img src="img/case-studies/jujube/reflectance_ksp.png" alt="KSP-3 반사율 스펙트럼">
-                            <img src="img/case-studies/jujube/reflectance_specim.png" alt="Specim FX10 반사율 스펙트럼">
+                            <img src="img/case-studies/jujube/reflectance_ksp.png" alt="KSP-3(NIR) 반사율 스펙트럼">
+                            <img src="img/case-studies/jujube/reflectance_specim.png" alt="Specim FX10(VNIR) 반사율 스펙트럼">
                         </div>
+                        <p style="font-size:13px;color:#888;margin-top:7px;text-align:center;">좌: NIR (KSP-3, 900–1700nm) · 우: VNIR (Specim FX10, 400–1000nm)</p>
                     </div>
 
                     <div class="case-section">
                         <h3>전처리와 모델링</h3>
-                        <p>원본 반사율은 산란·노이즈 영향 큼. SNV, MSC, Savitzky-Golay, 1·2차 미분 등 전처리 기법 조합 비교 후 Savitzky-Golay 단독 적용으로 확정. 이렇게 정리한 스펙트럼으로 PLSR 회귀 모델을 K-Fold 교차검증, R²·RMSE 기준으로 평가.</p>
-                        <div class="case-image-slot"><img src="img/case-studies/jujube/preprocessing_comparison_ksp.png" alt="전처리 전후 스펙트럼 비교"></div>
-                        <div class="case-image-slot"><img src="img/case-studies/jujube/plsr_structure_diagram.png" alt="PLSR 모델 구조"></div>
+                        <p>원본 반사율은 산란·베이스라인 변동이 큼. SNV·MSC·Savitzky-Golay·1·2차 미분 조합을 비교해 <b>SG(window 15) → MSC → 2차 미분 → 엣지 밴드 트림</b>을 최종 채택. PLSR 잠재변수 수는 교차검증으로 결정.</p>
+                        <p><b>엣지 트림은 밴드 수가 아니라 파장 기준으로 맞춰야 함.</b> 밴드 30개는 NIR에서 37.6nm지만 VNIR에서는 80.7nm라, VNIR이 가진 유일한 수분 흡수대(970nm)가 잘려나감. 파장 정합으로 바꾸자 VNIR 성능이 <span class="num">+0.119</span> 올라감.</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/jujube/preprocessing_comparison_ksp.png" alt="Savitzky-Golay 스무딩 전후 스펙트럼">
+                            <figcaption>NIR 반사율 스펙트럼 — 원본(좌) vs Savitzky-Golay 스무딩 후(우)</figcaption>
+                        </figure>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/jujube/plsr_structure_diagram.png" alt="PLSR 모델 구조">
+                            <figcaption>PLSR 모델 구조</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>검증</h3>
+                        <p>수치를 확정하기 전에 파이프라인을 네 단계로 검증함. <b>네 건 모두 결과를 낮추는 방향이었음.</b></p>
+                        <ul class="case-list">
+                            <li><b>파이프라인 오류 3건</b> — 서로 다른 5개 실행의 결과 그림이 md5 기준 완전히 동일한 이상 징후에서 출발. 학습 스크립트의 입력 경로가 다른 센서 폴더를 가리키고 있었고, 큐브 축 정의가 센서와 불일치했으며, white/dark 보정이 에러 없이 건너뛰어지고 있었음.</li>
+                            <li><b>비교 조건 정정</b> — 밴드 수 기준 통제를 파장(nm) 기준으로 재설계.</li>
+                            <li><b>데이터 누수 제거</b> — 654 스펙트럼은 327개체 × 앞·뒤면인데 무작위 분할을 쓰고 있었음. 같은 대추의 앞면이 학습, 뒷면이 평가에 들어감. <b>개체 단위 GroupKFold</b>로 재평가하자 R²가 0.702 → 0.637로 내려감.</li>
+                            <li><b>전처리 단계 누수 점검</b> — MSC 기준 스펙트럼과 스케일러를 fold 내부에서만 산출하도록 수정. 차이는 1e-05 수준으로, MSC reference 변경이 거의 전역 affine 변환이라 뒤따르는 2차 미분과 표준화가 상쇄시킨 결과임을 확인.</li>
+                        </ul>
                     </div>
 
                     <div class="case-section">
                         <h3>결과</h3>
-                        <p>SAM2 기반 반자동 세그멘테이션으로 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축. 원본 초분광 데이터와 측정 라벨은 비공개라 최종 R²·RMSE 수치는 코드 저장소에 공개하지 않음.</p>
+                        <p>개체 단위 GroupKFold 5-fold, out-of-fold 예측 기준.</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/jujube/model_comparison.png" alt="센서별 성능 비교">
+                            <figcaption>개체 단위 GroupKFold 기준 센서별 성능 — 주황색은 데이터 누수가 포함된 무작위 분할 결과</figcaption>
+                        </figure>
+                        <ul class="case-list">
+                            <li><b>NIR (KSP-3, 900–1700nm)</b> — R² <span class="num">0.637</span> / RMSE <span class="num">1.686</span> / RPD <span class="num">1.66</span> → 선별 가능</li>
+                            <li><b>VNIR (Specim FX10, 400–1000nm)</b> — R² <span class="num">0.356</span> / RMSE <span class="num">2.244</span> / RPD <span class="num">1.25</span> → 선별 부적합</li>
+                        </ul>
+                        <p>네 가지 분할 방식 전부에서 NIR이 앞섬. 물의 O–H 배음 흡수는 차수가 올라갈수록 약 10배씩 약해지는데, VNIR이 볼 수 있는 970nm는 NIR이 보는 1450nm 대비 약 <b>1/100</b> 세기인 데다 실리콘 검출기의 감도가 급감하는 스펙트럼 끝자락에 위치함. <b>측정 결과가 분광학적 예측과 일치</b>하며, 이는 후속 선별기의 센서 사양을 NIR로 결정하는 근거가 됨.</p>
+                        <p>함수율이 28–34%에 71% 몰려 있어(IQR 3.65%p) R² 단독으로는 성능이 과소평가됨. 그래서 RPD를 병기했고, <b>현 성능은 정량 예측이 아닌 선별(screening) 수준</b>임을 명시함.</p>
                     </div>
 
                     <div class="tags">
                         <span class="tag">Hyperspectral Imaging</span>
                         <span class="tag">PLSR</span>
                         <span class="tag">SAM2</span>
+                        <span class="tag">GroupKFold</span>
+                        <span class="tag">Chemometrics</span>
                     </div>
-                    <p style="margin-top:20px;"><a href="https://github.com/seongmi98/jujube-hsi-moisture" target="_blank" rel="noopener">GitHub에서 보기 →</a></p>
                 </div>
             </div>
         </section>

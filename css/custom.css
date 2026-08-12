@@ -236,17 +236,19 @@
 }
 .case-image-slot + .case-image-slot { margin-top: 12px; }
 .case-image-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-top: 16px;
-  flex-wrap: wrap;
 }
 .case-image-row img {
-  flex: 1 1 260px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border: 1px solid #ededed;
   border-radius: 6px;
+}
+@media (max-width: 575px) {
+  .case-image-row { grid-template-columns: 1fr; }
 }
 
 .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
@@ -345,3 +347,68 @@
   color: #777777;
   white-space: nowrap;
 }
+
+/* ── case study list ── */
+.case-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.case-list li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 9px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333333;
+}
+.case-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #999999;
+}
+
+/* 실제 이미지가 들어간 슬롯은 점선 플레이스홀더 스타일 해제 */
+.case-image-slot:has(img) {
+  border: 0;
+  background: none;
+  min-height: 0;
+  padding: 0;
+  display: block;
+}
+.case-figure { margin-top: 16px; }
+.case-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ededed;
+  border-radius: 6px;
+}
+.case-figure figcaption {
+  font-size: 13px;
+  color: #888888;
+  margin-top: 7px;
+  text-align: center;
+}
+
+/* 프로젝트 상단 GitHub 버튼 */
+.repo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 9px 16px;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  background: #ffffff;
+  transition: all .18s ease;
+}
+.repo-btn:hover {
+  background: #222222;
+  color: #ffffff;
+  text-decoration: none;
+}
+.repo-btn .fa { font-size: 15px; }
