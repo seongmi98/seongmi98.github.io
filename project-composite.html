@@ -62,7 +62,7 @@
                         <div class="page_link">
                             <a href="./">Home</a>
                             <a href="portfolio">Portfolio</a>
-                            <a href="project-composite">분광·초분광·측색 복합재 물성 분류·예측</a>
+                            <a href="project-composite">균사체 복합소재 물성 비파괴 예측</a>
                         </div>
                     </div>
                 </div>
@@ -82,21 +82,129 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio_right_text">
-                                <h4>분광·초분광·측색 데이터 기반 복합재 물성 분류·예측 모델</h4>
+                                <h4>균사체 복합소재 기계적 물성 비파괴 예측</h4>
                                 <ul class="list">
                                     <li><span>기간</span>: <b class="mono">2025.07–2025.09</b></li>
-                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 팀 프로젝트</li>
+                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 3인 팀 프로젝트 (㈜어스폼 연구 보고 과제)</li>
+                                    <li><span>역할</span>: 센서 데이터 수집 · 전처리 · 특징 추출 · 회귀 모델링 · 검증 설계 담당 (제1저자 발표)</li>
+                                    <li><span>성과</span>: 한국농업기계학회 2026 춘계학술대회 포스터 발표</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <p style="margin-top:16px; line-height:1.75;">데이터 수집과 모델 개발 파트로 참여. Vis-NIR·NIR 초분광 카메라, 분광기, 측색계까지 4종 센서로 수집한 데이터에 전처리 및 특징 추출 기법을 적용.</p>
+                    <div class="case-section">
+                        <h3>배경</h3>
+                        <p>균사체(Mycelium) 복합소재는 스티로폼을 대체할 친환경 완충재로 주목받고 있음. 문제는 <b>기계적 물성 평가가 파괴 시험에만 의존</b>한다는 것 — 시편을 눌러 부숴야 강도를 알 수 있으니 공정 중 실시간 모니터링이 불가능함.</p>
+                        <p>분광·초분광 센서로 물성을 비파괴 예측할 수 있는지, 그리고 <b>어떤 센서 사양이 실제로 유효한지</b>를 판별하는 것이 이 연구의 질문이었음. 3인이 실험과 분석을 분담했고, 담당 파트는 센서 데이터 수집·전처리·회귀 모델링·검증 설계임.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>시편</h3>
+                        <p>기질 3종으로 시편을 제작함 — <b>Type A</b> 참나무(배양 2–7일차), <b>Type B</b> 참나무+은사시나무(7일차), <b>Type C</b> 폐종이(7일차). 시료당 3개 샘플.</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/composite/specimens.jpg" alt="균사체 복합소재 시편">
+                            <figcaption>배양 일수에 따라 기질이 균사로 덮여가는 과정 — 왼쪽 2일차에서 오른쪽으로 갈수록 백색화</figcaption>
+                        </figure>
+                        <p class="case-note">시편 제공 — 국립원예특작과학원 인삼특작부 버섯과 · ㈜어스폼</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>센서 구성</h3>
+                        <p>점 분광 2종과 라인스캔 초분광 2종, 총 <b>4종</b>으로 동일 시편에 대한 데이터를 취득해 센서 간 직접 비교가 가능하도록 구성함. 여기에 측색계(KSP SM245)로 Lab 색 공간 데이터를 병행 수집해 표면 색 변화도 함께 봤음.</p>
+                        <table class="case-table">
+                            <thead><tr><th>구분</th><th>기기</th><th>파장 범위</th><th>측정 방식</th></tr></thead>
+                            <tbody>
+                                <tr><td>Vis-NIR 분광</td><td>OceanOptics</td><td>400–1,000 nm</td><td>점 분광</td></tr>
+                                <tr><td>NIR-SWIR 분광</td><td>KSP SM304</td><td>900–1,700 nm</td><td>점 분광</td></tr>
+                                <tr><td>Vis-NIR 초분광</td><td>Specim FX10</td><td>400–1,000 nm</td><td>라인 스캔</td></tr>
+                                <tr><td>SWIR 초분광</td><td>KSP3</td><td>1,200–1,700 nm</td><td>라인 스캔</td></tr>
+                                <tr><td>측색계</td><td>KSP SM245</td><td>Lab 색 공간</td><td>표면 색 측정</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>물성 측정</h3>
+                        <p>UTM 압축 시험으로 기준값을 확보함 — Ø80mm 원형 프로브로 시편 전체를 균일 가압, 속도 25mm/min, 변위 −20mm. 측정 지표는 4종.</p>
+                        <ul class="case-list">
+                            <li><b>Force@10mm</b> — 초기 구조 붕괴 저항</li>
+                            <li><b>Force@20mm</b> — 고변형 영역 강도</li>
+                            <li><b>Young's Modulus</b> — 초기 강성, 구조 치밀도</li>
+                            <li><b>Energy Absorption</b> — 완충재의 핵심 성능 지표</li>
+                        </ul>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/composite/mechanical.jpg" alt="배양 일수·기질별 기계적 물성">
+                            <figcaption>배양 일수별(좌) · 기질별(우) 기계적 물성</figcaption>
+                        </figure>
+                        <p>참나무 기질은 배양 일수가 늘수록 평균 Force가 <b>단조 증가</b>했고(ANOVA — Force@10mm F=8.01, p=0.0020 / Force@20mm F=7.42, p=0.0027), 5일차 이후로는 분산이 줄며 물성이 안정화됨. 같은 7일차 기준 기질별 압축 강도는 <b>참나무 &gt; 폐종이 &gt; 참나무+은사시</b> 순으로, 참나무 단일 기질의 조직이 가장 치밀했음.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>모델링</h3>
+                        <p>초분광은 Dark/White reference 보정 후 ROI를 잡고 전 방향 <b>20픽셀 erosion</b>으로 가장자리 노이즈를 제거, Savitzky–Golay(window 15, poly 2)와 SNV로 조도 변동을 정규화함. KSP3은 per-pixel flat-field 보정 후 1,200nm 이상 밴드만 사용.</p>
+                        <p>모델은 <b>PLS Regression</b>(StandardScaler, max 10 components), 검증은 <b>시편 단위 GroupKFold</b> — 같은 시편에서 나온 샘플이 학습과 검증에 동시에 들어가면 성능이 과대평가되므로 시편 단위로 묶어 분할함. 초분광 세트는 115개 ROI / 23개 시편 기준.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>결과 ① 초분광 — 어느 대역이 유효한가</h3>
+                        <table class="case-table">
+                            <thead><tr><th>센서</th><th>Force@10mm</th><th>Force@20mm</th><th>Modulus</th><th>Energy</th></tr></thead>
+                            <tbody>
+                                <tr><td>Specim FX10 (400–1,000nm)</td><td class="sel">0.78</td><td class="sel">0.89</td><td>0.77</td><td class="sel">0.87</td></tr>
+                                <tr><td>KSP3 (1,200–1,700nm)</td><td>0.795</td><td>0.844</td><td>0.800</td><td>0.837</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="case-note">전체 R² · 시편 단위 GroupKFold 5-fold · 115 ROI / 23 시편</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/composite/scatter.jpg" alt="초분광 교차검증 산점도">
+                            <figcaption>교차검증 예측 산점도 — Force@10mm (좌 Vis-NIR / 우 SWIR)</figcaption>
+                        </figure>
+                        <p>Vis-NIR(Specim)이 전체 R² <span class="num">0.77–0.89</span>로 우세함. 770–820nm의 <b>Red-edge 구조적 산란</b> 정보를 함께 볼 수 있기 때문으로 판단함. 다만 fold별로 보면 Force@10mm은 <span class="num">0.58 ± 0.50</span>으로 변동이 크고, Force@20mm는 <span class="num">0.85 ± 0.10</span>으로 안정적임 — <b>지표에 따라 신뢰도가 다르다</b>는 점을 함께 기재함.</p>
+                        <p>SWIR(KSP3)은 수분·구조 밴드만으로 <span class="num">0.795–0.844</span>의 동등한 수준을 냈음. 이는 <b>Red-edge 없이 좁은 장파장 대역만 쓰는 저비용 소형 센서로도 시스템 설계가 가능하다</b>는 근거가 됨.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>결과 ② 점 분광 — 전체 지표와 fold별 분산</h3>
+                        <table class="case-table">
+                            <thead><tr><th>센서 · 기준</th><th>Force@10mm</th><th>Force@20mm</th><th>Modulus</th><th>Energy</th></tr></thead>
+                            <tbody>
+                                <tr><td>Vis-NIR &nbsp;전체 R</td><td>0.84</td><td>0.83</td><td>0.63</td><td>0.84</td></tr>
+                                <tr><td>Vis-NIR &nbsp;fold 평균 R</td><td>0.26 ±0.73</td><td>0.27 ±0.71</td><td>0.11 ±0.82</td><td>0.29 ±0.69</td></tr>
+                                <tr><td>NIR-SWIR &nbsp;전체 R</td><td class="sel">0.89</td><td class="sel">0.88</td><td class="sel">0.76</td><td class="sel">0.87</td></tr>
+                                <tr><td>NIR-SWIR &nbsp;fold 평균 R</td><td class="sel">0.78 ±0.06</td><td class="sel">0.73 ±0.09</td><td class="sel">0.64 ±0.11</td><td class="sel">0.77 ±0.07</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="case-note">R(상관계수) 기준 · Vis-NIR OceanOptics 400–1,000nm (7-fold) / NIR-SWIR KSP SM304 900–1,700nm (5-fold) · 초분광 결과는 R²라 지표가 다름</p>
+                        <p><b>전체 R만 보면 Vis-NIR도 0.84로 나쁘지 않아 보임.</b> 그런데 fold별로 나눠 보면 평균이 <span class="num">0.26</span>에 편차 <span class="num">±0.73</span>임. 어떤 분할에서는 맞고 어떤 분할에서는 완전히 빗나간다는 뜻으로, 전체 데이터를 한 번에 볼 때만 상관이 살아 있는 상태임. 원인은 조도 환경과 표면 색상(갈변·백색화) 의존.</p>
+                        <p>NIR-SWIR은 같은 조건에서 fold 평균 <span class="num">0.78 ± 0.06</span>으로 안정적이었음. 색이 아니라 화학적 흡광 특성(1,450nm 부근 O–H 흡광 골)에 기반하기 때문임.</p>
+                        <p><b>전체 지표 하나만 보고 판단했다면 Vis-NIR을 골랐을 상황</b>이었고, fold별 분산을 함께 본 덕분에 실용 대역을 NIR-SWIR로 정리할 수 있었음.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>예측에 기여한 파장대</h3>
+                        <ul class="case-list">
+                            <li><b>770–820 nm</b> (Red-edge) — 균사 네트워크 치밀도와 결합력 반영. Force·Modulus 모델 모두에서 절대 계수가 가장 높음. 경화·건조 시 기울기 변화로 경화도의 간접 지표가 됨</li>
+                            <li><b>950–1,000 nm</b> — Specim 4개 타겟에서 공통 선택된 대역</li>
+                            <li><b>1,150–1,250 nm</b> — 수분 결합 상태와 조직 치밀도. 모든 지표에서 계수가 높게 나타난 구간</li>
+                            <li><b>1,275–1,285 nm</b> — C–H 결합(셀룰로오스) + 결합수 → 내부 치밀도·수분 함량</li>
+                            <li><b>1,470–1,480 nm</b> — O–H 배음 및 수분 피크 → 기공 구조와 건조 정도, Modulus·Energy 예측의 핵심</li>
+                        </ul>
+                        <p>KSP3은 Red-edge 없이 <b>1,275–1,480nm 두 대역만으로</b> Force·Energy를 설명했고, 이것이 장파장 기반 밴드 축소형 센서 설계의 근거가 됨.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h3>기각한 시도 — 측색계</h3>
+                        <p>표면 색이 물성을 설명할 수 있는지 확인하려고 측색계(KSP SM245)로 Lab 색 공간 데이터를 함께 수집했음. 배양 일수가 늘수록 기질 본래의 갈색이 균사에 덮이며 명도(L)가 올라가는 경향은 뚜렷했음.</p>
+                        <p>그런데 <b>기질별로 비교하면 결론이 뒤집힘</b> — 명도는 폐종이가 가장 높고 참나무가 가장 낮은데, 압축 강도는 반대로 참나무가 가장 높았음. 색은 균사의 밀도가 아니라 <b>기질 자체의 바탕색</b>에 지배된다는 뜻임.</p>
+                        <p>표면 색 정보보다 NIR 대역의 내부 화학 조성 정보가 물성 예측에 적합하다고 판단하고, 측색 데이터는 예측 변수에서 제외함.</p>
+                    </div>
 
                     <div class="tags">
                         <span class="tag">Hyperspectral Imaging</span>
                         <span class="tag">Spectroscopy</span>
-                        <span class="tag">Colorimetry</span>
+                        <span class="tag">PLS Regression</span>
+                        <span class="tag">GroupKFold</span>
                         <span class="tag">Feature Extraction</span>
                     </div>
                 </div>

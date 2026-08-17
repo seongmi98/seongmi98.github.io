@@ -25,3 +25,12 @@ package-lock.json
 # Personal resume (contains personal info, print-to-PDF locally only)
 resume.html
 경력기술서.html
+
+# Portfolio deliverables (submitted as a file; not published on the site)
+*.pptx
+*.pdf
+# ...but allow files deliberately placed under assets/ for publishing
+!assets/**/*.pdf
+
+# Scratch / staged-for-deletion
+_to_delete/

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="Pretendard, 'Malgun Gothic', system-ui, sans-serif">
+  <rect width="900" height="300" fill="#ffffff"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="30" font-size="15" font-weight="700" fill="#14161A">데이터 구성 흐름</text>
+  <text x="20" y="50" font-size="12" fill="#6B7280">촬영 → 선별 → 폴리곤 라벨링 → 7:2:1 분할 → 학습 데이터만 증강</text>
+
+  <!-- box 1 -->
+  <rect x="20" y="78" width="152" height="96" rx="8" fill="#F7F8FA" stroke="#E3E6EB"/>
+  <text x="36" y="102" font-size="11.5" font-weight="700" fill="#6B7280">01  현장 촬영</text>
+  <text x="36" y="132" font-size="24" font-weight="700" fill="#14161A">2,200<tspan font-size="14">여 장</tspan></text>
+  <text x="36" y="154" font-size="11.5" fill="#6B7280">4개월 · 3일 간격</text>
+
+  <line x1="178" y1="126" x2="204" y2="126" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- box 2 -->
+  <rect x="212" y="78" width="152" height="96" rx="8" fill="#F7F8FA" stroke="#E3E6EB"/>
+  <text x="228" y="102" font-size="11.5" font-weight="700" fill="#6B7280">02  선별</text>
+  <text x="228" y="132" font-size="24" font-weight="700" fill="#0F766E">224<tspan font-size="14" fill="#14161A">장</tspan></text>
+  <text x="228" y="154" font-size="11.5" fill="#6B7280">잡초 크기·발생 정도 기준</text>
+
+  <line x1="370" y1="126" x2="396" y2="126" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- box 3 -->
+  <rect x="404" y="78" width="188" height="96" rx="8" fill="#F7F8FA" stroke="#E3E6EB"/>
+  <text x="420" y="102" font-size="11.5" font-weight="700" fill="#6B7280">03  폴리곤 라벨링 (labelme)</text>
+  <text x="420" y="132" font-size="24" font-weight="700" fill="#14161A">14,047<tspan font-size="14">건</tspan></text>
+  <text x="420" y="154" font-size="11.5" fill="#6B7280">배추 모종 1,299 · 잡초 12,748</text>
+
+  <line x1="598" y1="126" x2="624" y2="126" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- box 4 -->
+  <rect x="632" y="78" width="248" height="96" rx="8" fill="#F7F8FA" stroke="#E3E6EB"/>
+  <text x="648" y="102" font-size="11.5" font-weight="700" fill="#6B7280">04  7 : 2 : 1 분할</text>
+  <g font-size="13" fill="#14161A">
+    <text x="648" y="128">Train <tspan font-weight="700">157</tspan></text>
+    <text x="740" y="128">Val <tspan font-weight="700">45</tspan></text>
+    <text x="812" y="128">Test <tspan font-weight="700">22</tspan></text>
+  </g>
+  <rect x="648" y="140" width="153" height="9" rx="4.5" fill="#0F766E"/>
+  <rect x="805" y="140" width="44" height="9" rx="4.5" fill="#9CA3AF"/>
+  <rect x="853" y="140" width="21" height="9" rx="4.5" fill="#D1D5DB"/>
+  <text x="648" y="166" font-size="11.5" fill="#6B7280">이미지 단위 분할 · 1280 × 720 리사이즈</text>
+
+  <!-- augmentation -->
+  <line x1="724" y1="180" x2="724" y2="204" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="404" y="210" width="476" height="70" rx="8" fill="#0F766E"/>
+  <text x="424" y="234" font-size="11.5" font-weight="700" fill="#9FD8D2">05  증강 — Train 만 적용 (Roboflow)</text>
+  <text x="424" y="262" font-size="19" font-weight="700" fill="#ffffff">157장 → 785장 <tspan font-size="14" fill="#9FD8D2">(5배)</tspan>   ·   라벨 42,226건</text>
+  <text x="700" y="262" font-size="11.5" fill="#9FD8D2" text-anchor="start"> </text>
+
+  <!-- aug list -->
+  <rect x="20" y="210" width="360" height="70" rx="8" fill="#ffffff" stroke="#E3E6EB"/>
+  <text x="36" y="234" font-size="11.5" font-weight="700" fill="#6B7280">적용한 증강</text>
+  <text x="36" y="256" font-size="12" fill="#14161A">Flip · Crop(0–20%) · Rotation(±15°) · Shear(±10°)</text>
+  <text x="36" y="272" font-size="12" fill="#14161A">Hue(±15°) · Brightness(±15%) · Blur(≤1px)</text>
+</svg>

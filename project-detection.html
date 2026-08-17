@@ -86,6 +86,7 @@
                                 <ul class="list">
                                     <li><span>기간</span>: <b class="mono">2024.01–2024.12</b></li>
                                     <li><span>소속</span>: 국립순천대학교 대학원 농업기계공학과 · 스마트농업공학기술연구실 (지도교수 김혁주)</li>
+                                    <li><span>역할</span>: 데이터 수집 · 라벨링 · 학습 파이프라인 구축 · 모델 비교 평가 · 최종 모델 선정 담당</li>
                                     <li><span>성과</span>: 공학석사 학위논문 · 한국농업기계학회 2024 추계학술대회 <b>우수 논문 발표상</b> · CIGR 2024 국제학회 발표</li>
                                 </ul>
                                 <a class="repo-btn" href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=e0156e208a87526cffe0bdc3ef48d419&keyword=%EC%84%A0%EC%84%B1%EB%AF%B8" target="_blank" rel="noopener"><i class="fa fa-file-text-o" aria-hidden="true"></i> 학위논문 보기 (RISS) →</a>
@@ -102,8 +103,20 @@
                     <div class="case-section">
                         <h3>데이터 수집</h3>
                         <p>2024년 3월 중순부터 6월 말까지 <b>약 4개월간</b> 전남 순천시 상사면 농장에서 파종 직후부터 <b>3일 간격</b>으로 직접 촬영. 총 <span class="num">2,200여 장</span>을 확보한 뒤, 잡초의 크기와 발생 정도를 기준으로 <span class="num">224장</span>을 선별해 라벨링함.</p>
-                        <p>촬영 조건은 <b>로봇의 실제 카메라 설치 위치를 기준</b>으로 잡음 — 지면에서 85cm, 두둑에서 65cm 높이에 수직 배치, 4000×1848 해상도, 자연광. 한 장에 담기는 실제 지면 면적은 83×38cm(약 0.318 m²).</p>
+                        <p>촬영 조건은 <b>로봇의 실제 카메라 설치 위치를 기준</b>으로 잡음 — 두둑 위 60cm(두둑 높이 20cm) 높이에 Galaxy S22 광각을 수직 배치, 4000×1848 해상도, 자연광. 한 장에 담기는 실제 지면 면적은 83×38cm(약 0.318 m²)이며, 하루 약 210포기를 70장으로 담음.</p>
                         <p>labelme로 배추 모종과 잡초를 <b>폴리곤</b>으로 라벨링 — 총 <span class="num">14,047</span>건(배추 모종 1,299 / 잡초 12,748). 학습·검증·테스트를 7:2:1로 나누고, Roboflow로 Flip·Crop·Rotation(±15°)·Shear·Hue·Brightness·Blur를 적용해 학습 데이터를 5배(157장 → 785장, 라벨 <span class="num">42,226</span>건)로 증강함.</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/acquisition_setup.png" alt="영상 취득 조건 구성도">
+                            <figcaption>취득 조건 — 로봇의 카메라 설치 위치를 기준으로 높이·화각을 고정 (학위논문 Fig. 7)</figcaption>
+                        </figure>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/dataset_flow.svg" alt="데이터 구성 흐름">
+                            <figcaption>촬영 → 선별 → 폴리곤 라벨링 → 7:2:1 분할 → 학습 데이터만 증강</figcaption>
+                        </figure>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/labeled_polygons.jpg" alt="폴리곤 라벨링 예시">
+                            <figcaption>labelme 폴리곤 라벨링 — 생육 단계·토양 색·그림자 조건이 다른 장면을 함께 포함 (학위논문 Fig. 8)</figcaption>
+                        </figure>
                     </div>
 
                     <div class="case-section">
@@ -114,9 +127,17 @@
 
                     <div class="case-section">
                         <h3>선정 근거 — 정확도와 속도의 트레이드오프</h3>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/model_comparison.png" alt="5종 모델 정확도·속도 비교">
+                            <figcaption>Test 데이터셋 기준 5종 비교 — 정확도 최상위와 속도 최상위가 갈리는 지점</figcaption>
+                        </figure>
                         <p>클래스별로 최우수 모델이 갈렸음. <b>잡초</b>는 RT-DETR이 F1 <span class="num">0.803</span>·mAP@0.5 <span class="num">0.822</span>로 가장 높았고, <b>배추 모종</b>은 YOLOv11이 F1 <span class="num">0.943</span>·mAP@0.5 <span class="num">0.976</span>로 가장 높았음.</p>
                         <p>잡초에서의 격차는 F1 <span class="num">0.020</span>(0.803 vs 0.783)에 불과했지만, 추론 속도는 YOLOv11이 <span class="num">12.2ms</span> · RT-DETR이 <span class="num">22.7ms</span>로 <b>1.86배</b> 차이였음. 실시간 요건을 기준으로 <b>YOLOv11을 최종 탑재 모델로 선정</b>함.</p>
                         <p>EfficientDet-D1은 잡초 F1 0.242·mAP@0.5 0.058로 사실상 탐지에 실패했는데, 640×640 입력으로 리사이즈되면서 작은 객체 정보가 소실된 것으로 판단함.</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/yolov11_predictions.jpg" alt="YOLOv11 라벨 대비 예측 결과">
+                            <figcaption>최종 선정 모델의 실제 출력 — (a) 정답 라벨, (b) YOLOv11 예측. 배추 모종은 거의 놓치지 않지만 작은 잡초에서 과검·미검이 남음 (학위논문 Fig. 16)</figcaption>
+                        </figure>
                     </div>
 
                     <div class="case-section">
@@ -126,6 +147,15 @@
                             <li><b>Fixed-size cropping with overlap</b> (800×450 / 640×360, overlap 320×180) — 크롭된 테스트셋에서는 성능이 올랐지만, <b>실제 운용에서 들어오는 원본 크기 이미지</b>에서는 기존 모델보다 낮았음(F1 0.854 / 0.857 vs 0.864). 추론 시간도 더 길어짐.</li>
                             <li><b>Bounding Box 기반 ROI 추출</b> — 크롭 테스트셋에서는 mAP 0.99대의 매우 높은 성능이 나왔지만, 원본 이미지에서는 배추 모종 F1 0.337, <b>잡초는 모든 지표가 0</b>이었음. 라벨 객체가 항상 이미지 중앙에 특정 크기로 놓이는 데이터로 학습해, <b>"객체는 중앙에 이 정도 크기로 존재한다"는 패턴 자체를 학습</b>해버린 것으로 분석함.</li>
                         </ul>
+                        
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/crop_ablation.png" alt="데이터셋 변형 기법 성능 비교">
+                            <figcaption>같은 모델도 평가셋을 바꾸면 결론이 뒤집힘 — 판단 기준은 운용 조건과 같은 원본 크기 이미지</figcaption>
+                        </figure>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/roi_extraction.jpg" alt="Bounding Box 기반 ROI 추출 데이터셋">
+                            <figcaption>ROI 추출로 만든 학습 데이터 — 객체가 항상 회색 패딩 한가운데 놓임. 모델이 "객체는 중앙에 이 정도 크기로 존재한다"를 학습해버린 원인 (학위논문 Fig. 11)</figcaption>
+                        </figure>
                         <p>크롭 테스트셋 성능만 보면 개선처럼 보이지만 <b>평가셋이 실제 운용 조건과 달랐던 것</b>이 원인이었고, 최종적으로 증강 데이터셋으로 학습한 YOLOv11을 유지함.</p>
                     </div>
 
@@ -136,7 +166,15 @@
                             <li><b>Galaxy S22</b> (데이터 수집에 사용한 카메라) — All F1 <span class="num">0.902</span>, 배추 모종 F1 <span class="num">1.000</span>, 잡초 F1 0.804. 잡초는 테스트셋 지표보다 오히려 높게 나옴.</li>
                             <li><b>Intel RealSense D457</b> (깊이 카메라) — All F1 0.844, Recall 0.775로 과소 예측 경향. 깊이 측정이 주목적인 센서라 RGB 화질이 낮은 것이 원인으로 판단. 깊이값은 60cm로 일정하게 출력됨.</li>
                         </ul>
-                        <p><b>학습 시점의 카메라와 배포 시점의 카메라가 다르면 성능이 달라진다</b>는 것을 정량적으로 확인한 부분. 실제 로봇에 탑재할 센서를 고를 때 반드시 고려해야 하는 지점임.</p>
+                        
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/realtime_test.jpg" alt="카메라별 실시간 추론 결과">
+                            <figcaption>실시간 재촬영 결과 — (좌) 정답 라벨, (중) Galaxy S22, (우) RealSense D457. D457 오른쪽의 균일한 파란 영역이 깊이 맵으로, 60cm 고정값이 그대로 출력됨 (학위논문 Fig. 24)</figcaption>
+                        </figure>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/detection/realtime_camera.png" alt="카메라별 실시간 추론 성능">
+                            <figcaption>동일 모델·동일 장면, 카메라만 교체했을 때의 성능 차이</figcaption>
+                        </figure><p><b>학습 시점의 카메라와 배포 시점의 카메라가 다르면 성능이 달라진다</b>는 것을 정량적으로 확인한 부분. 실제 로봇에 탑재할 센서를 고를 때 반드시 고려해야 하는 지점임.</p>
                     </div>
 
                     <div class="case-section">
