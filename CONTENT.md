@@ -32,7 +32,7 @@
 - Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
 
 ### P.02 항공 RGB 영상 시맨틱 분할 및 학습 전략 최적화
-- 기간 / 소속: 2025.03–2025.07 · 서울대학교 생체물성연구실
+- 기간 / 소속: 2025.03–2025.12 · 서울대학교 생체물성연구실
 - 센서 대역: RGB (가시광)
 - 문제: 항공 촬영 RGB 영상에서 배추·무·양파·마늘 4종을 픽셀 단위로 구분해야 함. 특히 작물군 분리 모델이 대상 작물 없는 인근 필지를 오탐(false-positive)하는 문제 해결 필요 (직불제 이행점검에서 치명적)
 - 접근: 통합 5-class로 아키텍처(DeepLabV3+/SegNeXt/Mask2Former) 비교 후 Mask2Former 선정. 형태 유사 작물을 배추·무 / 양파·마늘 두 작물군 3-class로 분리, 비대상 작물군 background-only 이미지 10% 추가로 오탐 억제. master 5-fold 교차검증, 촬영 고도(5–100m)별 민감도 분석
@@ -77,22 +77,22 @@
 
 ## Awards / 수상
 
-- 한국농업기계학회 추계학술대회 우수 논문 발표상 · 2024 · 딥러닝 알고리즘을 이용한 배추 모종 및 잡초 객체 탐지 기술 연구
+- (사)한국농업기계학회 추계학술대회 우수 논문 발표상 · 2024 · 딥러닝 알고리즘을 이용한 배추 모종 및 잡초 객체 탐지 기술 연구
 - 농업용 AI 로봇 응용 및 실습 프로그램 경진대회 장려상 · 2024.07 · 서울대학교 대학연대 지역인재양성 사업단 주관 · ArUco 마커 인식 자율주행 및 YOLOv8 과실 계수 미션
-- 한국농업기계학회 추계공동학술대회 우수 논문 발표상 · 2022 · 케나프 및 미이용 목재를 이용한 펠릿 연료 특성 및 소요동력 분석
+- (사)한국농업기계학회 추계공동학술대회 우수 논문 발표상 · 2022 · 케나프 및 미이용 목재를 이용한 펠릿 연료 특성 및 소요동력 분석
 
 ## 학회 발표
 
-- [1] Oral · 2025 · 한국농업기계학회 2025 추계학술대회 · 구두 발표
+- [1] Oral · 2025 · (사)한국농업기계학회 2025 추계학술대회 · 구두 발표
   - KR: 드론 RGB 영상 기반 밭작물 분류를 위한 객체 인식 모델 개발
   - EN: Development of Segmentation Model for Field Crop Classification Based on Drone RGB Imagery
-- [2] Poster · 1st Author · 2026 · 한국농업기계학회 2026 춘계학술대회 · 포스터
+- [2] Poster · 1st Author · 2026 · (사)한국농업기계학회 2026 춘계학술대회 · 포스터
   - 제목: 분광/초분광 데이터를 활용한 균사체 복합소재 기계적 물성 비파괴 예측 모델 개발
   - 세부: Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 R² 0.78–0.89
 - [3] Poster · 1st Author · 2024 · CIGR 2024 (International Commission of Agricultural and Biosystems Engineering) · 포스터
   - 제목(EN): Development of Kimchi Cabbage and Onion Robot Object Detection Model Based on YOLO
   - 세부: YOLO 기반 객체 탐지, 증강 후 데이터셋 6,020장 구축
-- [4] Poster · 2023 · 한국농업기계학회 2023 춘계학술대회 · 포스터
+- [4] Poster · 2023 · (사)한국농업기계학회 2023 춘계학술대회 · 포스터
   - KR: 반탄화에 의한 케나프와 미사용 목재혼합 펠릿연료의 비교분석
   - EN: Comparative Analysis of Kenaf and Unused Wood Mixed Pellet Fuel by Half-Carbonization
 
