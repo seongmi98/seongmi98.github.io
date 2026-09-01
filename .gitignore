@@ -24,6 +24,8 @@ package-lock.json
 
 # Personal resume (contains personal info, print-to-PDF locally only)
 resume.html
+resume-newgrad.html
+resume-onepage.html
 경력기술서.html
 
 # Portfolio deliverables (submitted as a file; not published on the site)
