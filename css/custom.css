@@ -219,6 +219,61 @@
 }
 .spec-row dd { font-size: 15px; line-height: 1.75; color: #222222; }
 
+/* ── case-study reading column ──
+   Body text and figures were stretching to the full ~1140px container,
+   which produced very long text lines and (for portrait photos) images
+   1000px+ tall. Capping the column narrows both at once. */
+.case-body { max-width: 780px; margin: 0 auto; }
+
+/* ── "개요" summary box — sits above the section-by-section write-up so a
+   reader gets the problem/approach/result in three sentences up front. ── */
+.case-overview {
+  background: #f9f9ff;
+  border-left: 3px solid #8490ff;
+  border-radius: 4px;
+  padding: 22px 26px;
+  margin: 8px 0 28px;
+}
+.case-overview p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333333;
+  margin: 0;
+}
+
+/* ── section category label + anchor nav ──
+   Every project page groups its (differently-titled) sections into the
+   same six stages, so a reader always knows which phase they're in. */
+.case-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #5a5fcf;
+  background: #f3f3fb;
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.case-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ededed;
+}
+.case-toc a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #777777;
+  padding: 6px 14px;
+  border: 1px solid #ededed;
+  border-radius: 20px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+.case-toc a:hover { color: #8490ff; border-color: #8490ff; }
+
 /* ── project case-study sections (fuller write-up, replaces spec-row on
    projects with images/graphs to show) ── */
 .case-section { margin: 32px 0; }
@@ -231,7 +286,8 @@
 }
 .case-section p { font-size: 15px; line-height: 1.8; color: #333333; }
 .case-image-slot {
-  margin-top: 16px;
+  max-width: 620px;
+  margin: 16px auto 0;
   min-height: 220px;
   border: 1px dashed #d4d4d4;
   border-radius: 6px;
@@ -405,6 +461,9 @@
   margin-top: 7px;
   text-align: center;
 }
+/* portrait/tall photos (e.g. camera-comparison shots) — full column width
+   would stretch these past 1000px tall, so cap them narrower and center. */
+.case-figure--tight { max-width: 420px; margin-left: auto; margin-right: auto; }
 
 /* 프로젝트 상단 GitHub 버튼 */
 .repo-btn {

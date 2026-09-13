@@ -93,13 +93,29 @@
                         </div>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-body">
+                    <div class="case-overview" id="overview">
+                        <span class="case-kicker">개요</span>
+                        <p>균사체 복합소재의 기계적 물성을 파괴 시험 없이 예측할 수 있는지, 어떤 센서 사양이 유효한지를 확인한 연구임. 분광·초분광 4종과 측색계 데이터를 동일 시편으로 비교해, Red-edge 대역을 포함한 Vis-NIR 초분광이 가장 높은 설명력을 보이면서도 좁은 장파장 대역만 쓰는 저비용 센서로도 동등한 성능이 가능함을 확인함. 표면 색은 기질 자체의 바탕색에 지배되어 물성 예측 변수에서는 제외함.</p>
+                    </div>
+                    <nav class="case-toc">
+                        <a href="#overview">개요</a>
+                        <a href="#problem">문제 정의</a>
+                        <a href="#data">데이터</a>
+                        <a href="#approach">해결 방식</a>
+                        <a href="#result">결과</a>
+                        <a href="#conclusion">결론</a>
+                    </nav>
+
+                    <div class="case-section" id="problem">
+                        <span class="case-kicker">문제 정의</span>
                         <h3>배경</h3>
                         <p>균사체(Mycelium) 복합소재는 스티로폼을 대체할 친환경 완충재로 주목받고 있음. 문제는 <b>기계적 물성 평가가 파괴 시험에만 의존</b>한다는 것 — 시편을 눌러 부숴야 강도를 알 수 있으니 공정 중 실시간 모니터링이 불가능함.</p>
                         <p>분광·초분광 센서로 물성을 비파괴 예측할 수 있는지, 그리고 <b>어떤 센서 사양이 실제로 유효한지</b>를 판별하는 것이 이 연구의 질문이었음. 담당 파트는 센서 데이터 수집·전처리·회귀 모델링·검증 설계임.</p>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="data">
+                        <span class="case-kicker">데이터</span>
                         <h3>시편</h3>
                         <p>기질 3종으로 시편을 제작함 — <b>Type A</b> 참나무(배양 2–7일차), <b>Type B</b> 참나무+은사시나무(7일차), <b>Type C</b> 폐종이(7일차). 시료당 3개 샘플.</p>
                         <figure class="case-figure">
@@ -110,6 +126,7 @@
                     </div>
 
                     <div class="case-section">
+                        <span class="case-kicker">데이터</span>
                         <h3>센서 구성</h3>
                         <p>점 분광 2종과 라인스캔 초분광 2종, 총 <b>4종</b>으로 동일 시편에 대한 데이터를 취득해 센서 간 직접 비교가 가능하도록 구성함. 여기에 측색계(KSP SM245)로 Lab 색 공간 데이터를 병행 수집해 표면 색 변화도 함께 봤음.</p>
                         <table class="case-table">
@@ -125,6 +142,7 @@
                     </div>
 
                     <div class="case-section">
+                        <span class="case-kicker">데이터</span>
                         <h3>물성 측정</h3>
                         <p>UTM 압축 시험으로 기준값을 확보함 — Ø80mm 원형 프로브로 시편 전체를 균일 가압, 속도 25mm/min, 변위 −20mm. 측정 지표는 4종.</p>
                         <ul class="case-list">
@@ -140,13 +158,15 @@
                         <p>참나무 기질은 배양 일수가 늘수록 평균 Force가 <b>단조 증가</b>했고(ANOVA — Force@10mm F=8.01, p=0.0020 / Force@20mm F=7.42, p=0.0027), 5일차 이후로는 분산이 줄며 물성이 안정화됨. 같은 7일차 기준 기질별 압축 강도는 <b>참나무 &gt; 폐종이 &gt; 참나무+은사시</b> 순으로, 참나무 단일 기질의 조직이 가장 치밀했음.</p>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="approach">
+                        <span class="case-kicker">해결 방식</span>
                         <h3>모델링</h3>
                         <p>초분광은 Dark/White reference 보정 후 ROI를 잡고 전 방향 <b>20픽셀 erosion</b>으로 가장자리 노이즈를 제거, Savitzky–Golay(window 15, poly 2)와 SNV로 조도 변동을 정규화함. KSP3은 per-pixel flat-field 보정 후 1,200nm 이상 밴드만 사용.</p>
                         <p>모델은 <b>PLS Regression</b>(StandardScaler, max 10 components), 검증은 <b>시편 단위 GroupKFold</b> — 같은 시편에서 나온 샘플이 학습과 검증에 동시에 들어가면 성능이 과대평가되므로 시편 단위로 묶어 분할함. 초분광 세트는 115개 ROI / 23개 시편 기준.</p>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="result">
+                        <span class="case-kicker">결과</span>
                         <h3>결과 ① 초분광 — 어느 대역이 유효한가</h3>
                         <table class="case-table">
                             <thead><tr><th>센서</th><th>Force@10mm</th><th>Force@20mm</th><th>Modulus</th><th>Energy</th></tr></thead>
@@ -165,6 +185,7 @@
                     </div>
 
                     <div class="case-section">
+                        <span class="case-kicker">결과</span>
                         <h3>결과 ② 점 분광 — 전체 지표와 fold별 분산</h3>
                         <table class="case-table">
                             <thead><tr><th>센서 · 기준</th><th>Force@10mm</th><th>Force@20mm</th><th>Modulus</th><th>Energy</th></tr></thead>
@@ -182,6 +203,7 @@
                     </div>
 
                     <div class="case-section">
+                        <span class="case-kicker">결과</span>
                         <h3>예측에 기여한 파장대</h3>
                         <ul class="case-list">
                             <li><b>770–820 nm</b> (Red-edge) — 균사 네트워크 치밀도와 결합력 반영. Force·Modulus 모델 모두에서 절대 계수가 가장 높음. 경화·건조 시 기울기 변화로 경화도의 간접 지표가 됨</li>
@@ -193,7 +215,8 @@
                         <p>KSP3은 Red-edge 없이 <b>1,275–1,480nm 두 대역만으로</b> Force·Energy를 설명했고, 이것이 장파장 기반 밴드 축소형 센서 설계의 근거가 됨.</p>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="conclusion">
+                        <span class="case-kicker">결론</span>
                         <h3>기각한 시도 — 측색계</h3>
                         <p>표면 색이 물성을 설명할 수 있는지 확인하려고 측색계(KSP SM245)로 Lab 색 공간 데이터를 함께 수집했음. 배양 일수가 늘수록 기질 본래의 갈색이 균사에 덮이며 명도(L)가 올라가는 경향은 뚜렷했음.</p>
                         <p>그런데 <b>기질별로 비교하면 결론이 뒤집힘</b> — 명도는 폐종이가 가장 높고 참나무가 가장 낮은데, 압축 강도는 반대로 참나무가 가장 높았음. 색은 균사의 밀도가 아니라 <b>기질 자체의 바탕색</b>에 지배된다는 뜻임.</p>
@@ -207,6 +230,7 @@
                         <span class="tag">GroupKFold</span>
                         <span class="tag">Feature Extraction</span>
                     </div>
+                    </div><!-- /.case-body -->
                 </div>
             </div>
         </section>

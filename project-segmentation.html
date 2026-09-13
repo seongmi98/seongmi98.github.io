@@ -94,41 +94,62 @@
                         </div>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-body">
+                    <div class="case-overview" id="overview">
+                        <span class="case-kicker">개요</span>
+                        <p>드론 RGB 영상으로 배추·무·양파·마늘을 구분하는 시맨틱 분할 연구로, 배포 단위에 맞춰 작물군을 3-class로 분리하되 비대상 작물군을 오탐하는 문제를 어떻게 막을지가 핵심 과제였음. Mask2Former를 기본 모델로 선정하고, 비대상 이미지를 10%만 추가해 오탐율을 두 자릿수에서 1% 내외로 낮췄으며, 작물군별로 촬영 고도 민감도가 다르다는 것도 함께 확인함.</p>
+                    </div>
+                    <nav class="case-toc">
+                        <a href="#overview">개요</a>
+                        <a href="#problem">문제 정의</a>
+                        <a href="#data">데이터</a>
+                        <a href="#approach">해결 방식</a>
+                        <a href="#result">결과</a>
+                        <a href="#conclusion">결론</a>
+                    </nav>
+
+                    <div class="case-section" id="problem">
+                        <span class="case-kicker">문제 정의</span>
                         <h3>배경</h3>
                         <p>국내 밭농업은 소규모 필지에 여러 작물이 혼재됨. 공익직불제 이행점검 자동화를 위해 드론 RGB 영상에서 배추·무·양파·마늘 4종을 픽셀 단위로 구분해야 함. 4종을 한 모델에 묶을 이유가 실제 운용에서는 크지 않음. 배추·무와 양파·마늘은 <b>주산지가 갈려 한 지역 드론 영상에 같이 나올 일이 사실상 없기 때문</b>. 그래서 배포 단위인 지역에 맞춰 배추·무 / 양파·마늘 두 개의 3-class 모델로 나누고, 통합 5-class 모델을 기준으로 삼음. 대신 학습하지 않은 작물을 대상으로 오탐할 위험이 새로 생기는데, 이를 어떻게 막았는지가 이 연구의 핵심임.</p>
-                        <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/workflow.png" alt="연구 전체 워크플로우: 드론 RGB 5-class 데이터(master 5-fold) → 아키텍처 비교(Mask2Former 선정) → 작물군 분리(3-class remap) → 배경 ablation·FP 평가(bg10 선정) → 고도별 실험(all/low/mid/high)"></div>
+                        <div class="case-image-slot"><img src="img/case-studies/segmentation/workflow.png" alt="연구 전체 워크플로우: 드론 RGB 5-class 데이터(master 5-fold) → 아키텍처 비교(Mask2Former 선정) → 작물군 분리(3-class remap) → 배경 ablation·FP 평가(bg10 선정) → 고도별 실험(all/low/mid/high)"></div>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="data">
+                        <span class="case-kicker">데이터</span>
                         <h3>데이터 수집</h3>
                         <p>발주기관이 2022–2024년 전국 주요 산지(강릉·평창·무안·창녕·의성·제주 등)에서 DJI Mavic 2 Zoom으로 취득한 영상을 <b>제공받아 정제·재구성</b>함. 촬영 고도 5–100m를 저고도(5–30m)·중고도(40–60m)·고고도(70–100m)로 구분함. 총 <span class="num">12,380장</span>(배추·무 2,510 / 양파·마늘 9,870). 이미지 단위 master 5-fold split을 만들어 모든 모델이 동일 split을 사용하도록 고정함.</p>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="approach">
+                        <span class="case-kicker">해결 방식</span>
                         <h3>아키텍처 선정</h3>
                         <p>통합 5-class 데이터에서 DeepLabV3+, SegNeXt, Mask2Former를 동일 조건 5-fold 교차검증으로 비교. Mask2Former가 <span class="num">mIoU 80.08 ± 3.42%</span>로 가장 높고 클래스 간 성능도 균형적이어서 기본 모델로 선정함(SegNeXt 76.91 ± 3.30%, DeepLabV3+ 76.77 ± 5.26%). 세 모델의 mIoU 자체는 비슷한 수준이고, 클래스 간 편차가 가장 작은 Mask2Former를 택함.</p>
-                        <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/architecture.png" alt="아키텍처별 5-class mIoU 비교: Mask2Former 80.08% > SegNeXt 76.91% > DeepLabV3+ 76.77%. 클래스별(배경·배추·무·양파·마늘)로는 Mask2Former가 가장 균형적"></div>
+                        <div class="case-image-slot"><img src="img/case-studies/segmentation/architecture.png" alt="아키텍처별 5-class mIoU 비교: Mask2Former 80.08% > SegNeXt 76.91% > DeepLabV3+ 76.77%. 클래스별(배경·배추·무·양파·마늘)로는 Mask2Former가 가장 균형적"></div>
                     </div>
 
                     <div class="case-section">
+                        <span class="case-kicker">해결 방식</span>
                         <h3>작물군 분리 효과</h3>
                         <p>통합 5-class 대비 작물군 분리 3-class 모델에서 네 작물 모두 IoU가 향상됨. 배추 <span class="num">+11.15%p</span>(73.62에서 84.77로), 무 +9.03%p(81.35에서 90.38로), 마늘 +5.49%p(78.41에서 83.90으로), 양파 +3.77%p(84.87에서 88.64로). 학습 범위를 두 작물과 배경으로 좁히니 각 작물의 형태·경계 특징을 더 집중적으로 학습함. <span class="num">여기 값은 순수한 작물군 분리 효과</span>로, 뒤에 나오는 비대상 영상 10% 추가 효과는 포함하지 않음.</p>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="result">
+                        <span class="case-kicker">결과</span>
                         <h3>핵심 기여 — 비대상 작물군 오탐 억제</h3>
                         <p>작물군 분리 모델은 target 작물이 없는 인근 필지·비대상 작물군 장면을 target으로 오탐할 위험이 큼. 대상 유무 자체를 판정해야 하는 직불제 점검에서는 치명적. 이를 막기 위해 비대상 작물군 background-only 이미지를 target 대비 10% 추가하는 전략을 제안함. 추가 전(bg0%)에는 비대상 장면 전체 픽셀 중 평균 <span class="num">42.6–67.9%</span>를 target으로 오탐했으나, 10%만 추가(bg10%)해도 <span class="num">0.5–0.7%</span>로 급감함(오탐 이미지 비율 FP@1% 65.2·84.8% → 1.7%). target이 포함된 영상의 성능 손실은 거의 없어, 최소한으로 충분한 10%를 최종 설정으로 채택함.</p>
-                        <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/fp_bar.png" alt="비대상 작물군 오탐 억제: bg0% 대비 bg10%에서 predicted target pixel ratio(배추·무 42.6%→0.7%, 양파·마늘 67.9%→0.5%)와 FP@1%·FP@5%가 모두 1% 내외로 급감"></div>
+                        <div class="case-image-slot"><img src="img/case-studies/segmentation/fp_bar.png" alt="비대상 작물군 오탐 억제: bg0% 대비 bg10%에서 predicted target pixel ratio(배추·무 42.6%→0.7%, 양파·마늘 67.9%→0.5%)와 FP@1%·FP@5%가 모두 1% 내외로 급감"></div>
                     </div>
 
                     <div class="case-section">
+                        <span class="case-kicker">결과</span>
                         <h3>촬영 고도 민감도</h3>
                         <p>촬영 고도의 영향은 단일 최적값으로 수렴하지 않고 작물군 형태에 따라 상반되게 나타남. 넓은 잎의 배추·무는 중고도에서 최고(<span class="num">mIoU 92.83%</span>), 가늘고 선형적인 양파·마늘은 고도가 높아질수록 상승해 고고도에서 최고(<span class="num">mIoU 90.97%</span>). 따라서 "저고도가 항상 유리하다"가 아니라, 작물군에 따라 촬영 고도 가이드라인을 차등 적용하는 것이 바람직함.</p>
-                        <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/altitude_miou.png" alt="작물군별 고도-mIoU: 배추·무는 중고도(92.8)에서 최고·고고도(79.2)에서 하락, 양파·마늘은 고도가 높아질수록 상승해 고고도(91.0)에서 최고"></div>
+                        <div class="case-image-slot"><img src="img/case-studies/segmentation/altitude_miou.png" alt="작물군별 고도-mIoU: 배추·무는 중고도(92.8)에서 최고·고고도(79.2)에서 하락, 양파·마늘은 고도가 높아질수록 상승해 고고도(91.0)에서 최고"></div>
                     </div>
 
-                    <div class="case-section">
+                    <div class="case-section" id="conclusion">
+                        <span class="case-kicker">결론</span>
                         <h3>결과와 의의</h3>
                         <p>작물군 분리 구성, 비대상 작물군 오탐 억제, 작물군별 고도 민감도를 함께 고려한 드론 밭작물 분할의 현장 운용 전략을 제시함. 특히 소량(10%)의 background-only 이미지만으로 오탐을 두 자릿수 pp에서 1% 내외로 낮춘 점이 핵심 기여. 원본 영상·라벨은 국립농산물품질관리원 소유라 비공개이며, 코드와 데이터 전처리 파이프라인은 GitHub에 공개함.</p>
                     </div>
@@ -139,6 +160,7 @@
                         <span class="tag">Crop-Group Modeling</span>
                         <span class="tag">False-Positive Suppression</span>
                     </div>
+                    </div><!-- /.case-body -->
                 </div>
             </div>
         </section>
