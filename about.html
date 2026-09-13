@@ -76,10 +76,11 @@
                         <div class="welcome_text">
                             <h4>About Myself</h4>
                             <p>
-                                센서와 영상 데이터로 대상의 상태를 정량적으로 예측하는 모델을 만든다. RGB·초분광·뎁스 등
-                                서로 다른 성질의 데이터를 다루며 수집 설계부터 전처리, 학습, 검증까지 분석 파이프라인 전
-                                과정을 수행해 왔다. 여러 모델을 비교해 근거를 갖고 하나를 선택하는 일, 그 선택이 실제
-                                운영 환경에서 유지되는지 검증하는 일에 강점이 있다.
+                                객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발해 왔다. RGB와 초분광, 뎁스 등
+                                서로 다른 성질의 데이터를 다루며 데이터 구축부터 모델 비교와 성능 분석, 실제 장비 적용까지
+                                수행한다. 정확도만이 아니라 처리 속도와 운용 환경에 따른 성능 변화를 함께 확인하고,
+                                잘 나온 결과를 그대로 받아들이기보다 성능이 떨어지는 조건과 원인을 찾아 데이터와 모델을 개선한다.
+                                재직 중 정부부처·기업 발주 국가 R&amp;D 6건에 모델 개발 파트로 참여했다.
                             </p>
                         </div>
                     </div>
@@ -87,12 +88,14 @@
                         <div class="tools_expert">
                             <h3>Tech Stack</h3>
                             <ul class="stack-list">
-                                <li><span class="stack-label">Language</span><span class="stack-value">Python</span></li>
-                                <li><span class="stack-label">ML/DL</span><span class="stack-value">PyTorch · YOLO · OpenCV</span></li>
-                                <li><span class="stack-label">Data</span><span class="stack-value">NumPy · Pandas · 분광 데이터 전처리 및 회귀 모델링</span></li>
-                                <li><span class="stack-label">Vision</span><span class="stack-value">Object Detection · Semantic Segmentation</span></li>
-                                <li><span class="stack-label">Sensors</span><span class="stack-value">RGB · 초분광(Vis-NIR/NIR) · Depth</span></li>
-                                <li><span class="stack-label">Tools</span><span class="stack-value">Git · Autodesk Inventor</span></li>
+                                <li><span class="stack-label">Language</span><span class="stack-value">Python (전처리~학습 코드 수정~평가~시각화) · C (기초 문법, 자료구조·알고리즘)</span></li>
+                                <li><span class="stack-label">Detection</span><span class="stack-value">YOLO 계열 · RT-DETR · Faster R-CNN · EfficientDet</span></li>
+                                <li><span class="stack-label">Segmentation</span><span class="stack-value">Mask2Former · SegNeXt · DeepLabV3+ · SAM2</span></li>
+                                <li><span class="stack-label">ML/DL</span><span class="stack-value">PyTorch · OpenCV · scikit-learn · PLS 회귀 · 개체/시편 단위 교차검증 설계</span></li>
+                                <li><span class="stack-label">Data</span><span class="stack-value">NumPy · Pandas · 현장 촬영과 폴리곤 라벨링으로 학습셋 직접 구축 · 운용 조건 평가셋 별도 구성</span></li>
+                                <li><span class="stack-label">Sensors</span><span class="stack-value">RGB · RGB-Depth · 드론 항공영상 · 초분광(VNIR/NIR/SWIR) · 분광 스펙트럼 · 표면 색</span></li>
+                                <li><span class="stack-label">Deploy</span><span class="stack-value">Jetson AGX Orin · Jetson Nano 온디바이스 추론 · Intel RealSense · Linux GPU 서버 원격 학습</span></li>
+                                <li><span class="stack-label">Tools</span><span class="stack-value">Git · VS Code · Jupyter · Autodesk Inventor (일반기계기사 실기 취득)</span></li>
                             </ul>
                         </div>
                     </div>
@@ -100,6 +103,42 @@
             </div>
         </section>
         <!--================End Welcome Area =================-->
+
+
+        <!--================Skills Area =================-->
+        <section class="p_120" style="padding-top:0;">
+            <div class="container">
+                <div class="main_title">
+                    <h2>Skills</h2>
+                </div>
+                <div class="skill-group">
+                    <h4>모델 개발 <span class="en">Model Development</span></h4>
+                    <div class="skill-line"><span class="skill-key">딥러닝</span><span class="skill-val">객체 탐지(YOLO 계열, DETR 계열)와 시맨틱 분할(Transformer 계열, CNN 계열) 모델을 PyTorch로 학습합니다. 서로 다른 아키텍처를 동일 조건에서 비교해 정확도와 추론 속도를 함께 놓고 장비에 올릴 모델을 선정하며, 전처리부터 후처리까지 포함한 처리시간을 직접 측정합니다.</span></div>
+                    <div class="skill-line"><span class="skill-key">머신러닝</span><span class="skill-val">PLS 회귀로 분광 데이터 기반 함수율과 물성 예측 모델을 개발합니다. 같은 개체나 시편이 학습과 검증에 나뉘어 들어가지 않도록 개체 단위 교차검증을 설계해 데이터 누수를 차단합니다.</span></div>
+                    <div class="skill-line"><span class="skill-key">데이터 구축</span><span class="skill-val">공개 데이터가 없는 과제에서 현장 촬영과 선별, 라벨링으로 학습셋을 직접 만들고, 운용 조건을 대표하는 평가셋을 따로 구성해 지표를 검증합니다.</span></div>
+                </div>
+                <div class="skill-group">
+                    <h4>언어 <span class="en">Languages</span></h4>
+                    <div class="skill-line"><span class="skill-key">Python</span><span class="skill-val">데이터 전처리부터 학습 코드 수정, 성능 평가와 결과 시각화까지 직접 작성합니다.</span></div>
+                    <div class="skill-line"><span class="skill-key">C</span><span class="skill-val">학부 과정에서 기초 문법과 알고리즘을 학습했고, 자료구조와 알고리즘 문제 풀이로 활용 범위를 넓히고 있습니다.</span></div>
+                </div>
+                <div class="skill-group">
+                    <h4>개발 환경 <span class="en">Environment</span></h4>
+                    <div class="skill-line"><span class="skill-key">Linux</span><span class="skill-val">GPU 서버에 원격 접속해 모델 학습과 결과 관리를 진행하고, Jetson Nano 보드의 Linux 환경에 학습한 YOLO 모델을 올려 추론 코드를 작성했습니다.</span></div>
+                    <div class="skill-line"><span class="skill-key">VS Code, Jupyter</span><span class="skill-val">코드 작성과 디버깅, 원격 서버 접속에 VS Code를, 데이터 전처리와 분석, 시각화에 Jupyter Notebook을 사용합니다.</span></div>
+                </div>
+                <div class="skill-group">
+                    <h4>다룬 센서 데이터 <span class="en">Sensor Data</span></h4>
+                    <div class="skill-line"><span class="skill-key">영상</span><span class="skill-val">RGB, RGB-Depth, 드론 항공영상. 객체 탐지와 시맨틱 분할 모델 학습에 사용했습니다.</span></div>
+                    <div class="skill-line"><span class="skill-key">분광</span><span class="skill-val">초분광 영상(VNIR, NIR, SWIR), 분광 스펙트럼, 표면 색. 라인스캐닝 수집 장치를 직접 구축해 스캔 속도와 촬영 거리, 광원 각도를 확정했습니다.</span></div>
+                </div>
+                <div class="skill-group">
+                    <h4>설계 <span class="en">CAD</span></h4>
+                    <div class="skill-line"><span class="skill-key">Inventor</span><span class="skill-val">일반기계기사 실기를 Inventor로 응시해 취득했습니다. 요구 조건에 맞춰 부품을 3D 모델링하고 조립한 뒤 2D 도면까지 작성할 수 있습니다.</span></div>
+                </div>
+            </div>
+        </section>
+        <!--================End Skills Area =================-->
 
         <!--================Education / Career Area =================-->
         <section class="p_120" style="padding-top:0;">
@@ -111,22 +150,23 @@
                     <dt>석사</dt>
                     <dd>
                         <div class="name">농업기계공학과, 국립순천대학교 대학원 (공학석사)</div>
-                        <div class="meta">2023.03 – 2025.02 · 스마트농업공학기술연구실 (지도교수 김혁주) · 학점 4.44/4.5</div>
-                        <div class="meta">학위논문: <a href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=e0156e208a87526cffe0bdc3ef48d419&keyword=%EC%84%A0%EC%84%B1%EB%AF%B8" target="_blank" rel="noopener">딥러닝 알고리즘을 이용한 객체 탐지 기술 연구</a></div>
+                        <div class="meta">2023.03 ~ 2025.02 · 스마트농업공학기술연구실 (지도교수 김혁주) · 학점 4.44/4.5</div>
+                        <div class="meta">학위논문: <a href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=e0156e208a87526cffe0bdc3ef48d419&keyword=%EC%84%A0%EC%84%B1%EB%AF%B8" target="_blank" rel="noopener">딥러닝 알고리즘을 이용한 배추 모종 및 잡초 객체 탐지 기술 연구</a></div>
                     </dd>
                 </div>
                 <div class="info-row">
                     <dt>학사</dt>
                     <dd>
                         <div class="name">융합바이오시스템기계공학과, 국립순천대학교 (공학사)</div>
-                        <div class="meta">2019.03 – 2023.02 · 학점 4.06/4.5</div>
+                        <div class="meta">2019.03 ~ 2023.02 · 스마트농업공학기술연구실 학부연구생 (지도교수 김혁주, 석사 과정과 같은 연구실) · 학점 4.06/4.5</div>
+                        <div class="meta">학부 연구: 바이오매스 펠릿 연료화. 함수율과 혼합비를 바꿔 9개 조건의 펠릿을 제조하고 조건별 성능을 비교. 실험 설계와 측정, 데이터 정리를 맡아 공동 1저자로 발표(2022 우수 논문 발표상)</div>
                     </dd>
                 </div>
                 <div class="info-row">
                     <dt>경력</dt>
                     <dd>
-                        <div class="name">계약연구원, 서울대학교 산학협력단 (바이오시스템공학과 생체물성연구실)</div>
-                        <div class="meta">2025.03 ~ 재직중 · Seoul, Korea</div>
+                        <div class="name">연구원, 서울대학교 농업생명과학연구원 (바이오시스템공학과 생체물성연구실)</div>
+                        <div class="meta">2025.03 ~ 2026.08 (1년 6개월) · 컴퓨터비전 · 센서 AI · 연구책임 김기석 교수</div>
                     </dd>
                 </div>
                 <div class="info-row">
@@ -134,6 +174,15 @@
                     <dd>
                         <div class="name">일반기계기사</div>
                         <div class="meta">한국산업인력공단 · 2023.12</div>
+                        <div class="name" style="margin-top:10px;">운전면허 1종 보통</div>
+                        <div class="meta">대전지방경찰청 · 2017.01</div>
+                    </dd>
+                </div>
+                <div class="info-row">
+                    <dt>어학</dt>
+                    <dd>
+                        <div class="name">TOEIC Speaking IM3</div>
+                        <div class="meta">2026.06</div>
                     </dd>
                 </div>
             </div>
@@ -144,9 +193,17 @@
         <section class="p_120" style="padding-top:0;">
             <div class="container">
                 <div class="main_title">
-                    <h2>Awards</h2>
+                    <h2>Awards &amp; Activities</h2>
                 </div>
                 <div class="talk-list">
+                    <div class="talk-row">
+                        <div>
+                            <div class="talk-title">(사)한국농업기계학회 제5회 농업용 로봇 경진대회 본선 진출</div>
+                            <div class="talk-sub">6인 팀 팀장 (객체 인식 담당) · 익은 과실만 색으로 구분해 검출하고 개수를 부저로 출력. 대회 규정상 인터넷 사용이 금지되어 NVIDIA Jetson Nano 보드에서 모델을 직접 구동해야 했고, 보드 사양에 맞춰 모델 크기와 속도를 먼저 조정함</div>
+                            <div class="talk-venue">전국 자율주행 로봇 과수원 주행 임무 대회</div>
+                        </div>
+                        <div class="talk-year mono">2024</div>
+                    </div>
                     <div class="talk-row">
                         <div>
                             <div class="talk-title">(사)한국농업기계학회 추계학술대회 우수 논문 발표상</div>
@@ -156,8 +213,8 @@
                     </div>
                     <div class="talk-row">
                         <div>
-                            <div class="talk-title">농업용 AI 로봇 응용 및 실습 프로그램 경진대회 장려상</div>
-                            <div class="talk-sub">ArUco 마커 인식 자율주행 및 YOLOv8 과실 계수 미션</div>
+                            <div class="talk-title">농업용 AI 로봇 응용 및 실습 프로그램 수료 (5일 · 28시간) · 경진대회 장려상</div>
+                            <div class="talk-sub">전국 13개 대학 지원자 중 42명 선발. OpenCV 영상처리, ArUco 마커 인식, YOLO 객체 탐지, Python 로봇 제어와 자율주행 실습 후 팀 설계 과제 수행. 4인 팀에서 영상 인식을 맡아 참가 11개 팀 중 장려상</div>
                             <div class="talk-venue">서울대학교 대학연대 지역인재양성 사업단 주관</div>
                         </div>
                         <div class="talk-year mono">2024</div>
@@ -185,7 +242,7 @@
                         <div>
                             <div class="talk-badges"><span class="talk-badge badge-poster">Poster</span><span class="talk-badge badge-author">1st Author</span></div>
                             <div class="talk-title">분광/초분광 데이터를 활용한 균사체 복합소재 기계적 물성 비파괴 예측 모델 개발</div>
-                            <div class="talk-sub">Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 <span class="num">R² 0.78–0.89</span></div>
+                            <div class="talk-sub">Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 <span class="num">R² 0.77~0.89</span></div>
                             <div class="talk-venue">(사)한국농업기계학회 2026 춘계학술대회</div>
                         </div>
                         <div class="talk-year mono">2026</div>
@@ -238,7 +295,7 @@
                             <div class="f_title">
                                 <h3>About Me</h3>
                             </div>
-                            <p>센서·영상 데이터 기반 품질 예측 모델을 개발하는 데이터 사이언티스트입니다.</p>
+                            <p>객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발하는 엔지니어입니다.</p>
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

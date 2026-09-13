@@ -4,15 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>항공 RGB 영상 시맨틱 분할 — 선성미</title>
+        <title>드론 밭작물 분할 모델 — 선성미</title>
         <meta name="description" content="드론 RGB 영상에서 배추·무·양파·마늘을 작물군으로 분리 학습하고, 비대상 작물군 오탐을 억제하며 촬영 고도별 민감도를 분석한 시맨틱 분할 연구.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://seongmi98.github.io/project-segmentation">
-        <meta property="og:title" content="항공 RGB 영상 시맨틱 분할 — 선성미">
+        <meta property="og:title" content="드론 밭작물 분할 모델 — 선성미">
         <meta property="og:description" content="드론 RGB 영상에서 배추·무·양파·마늘을 작물군으로 분리 학습하고, 비대상 작물군 오탐을 억제하며 촬영 고도별 민감도를 분석한 시맨틱 분할 연구.">
         <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="항공 RGB 영상 시맨틱 분할 — 선성미">
+        <meta name="twitter:title" content="드론 밭작물 분할 모델 — 선성미">
         <meta name="twitter:description" content="드론 RGB 영상에서 배추·무·양파·마늘을 작물군으로 분리 학습하고, 비대상 작물군 오탐을 억제하며 촬영 고도별 민감도를 분석한 시맨틱 분할 연구.">
         <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
                         <div class="page_link">
                             <a href="./">Home</a>
                             <a href="portfolio">Portfolio</a>
-                            <a href="project-segmentation">항공 RGB 시맨틱 분할</a>
+                            <a href="project-segmentation">드론 밭작물 분할</a>
                         </div>
                     </div>
                 </div>
@@ -81,11 +81,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio_right_text">
-                                <h4>항공 RGB 영상 시맨틱 분할 및 학습 전략 최적화</h4>
+                                <h4>드론 영상 기반 밭작물 분할 모델 개발</h4>
                                 <ul class="list">
-                                    <li><span>기간</span>: <b class="mono">2025.03–2026.08</b></li>
-                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 국립농산물품질관리원 발주 「공익직불제 이행점검 자동화를 위한 드론 영상 밭작물 판별 모델 개발」</li>
-                                    <li><span>역할</span>: 제공 영상 정제 · 아키텍처 비교 설계 · 학습 전략 수립 및 검증 · 취득 조건별 민감도 분석 담당</li>
+                                    <li><span>기간</span>: <b class="mono">2025.03~2026.08</b></li>
+                                    <li><span>발주기관</span>: 국립농산물품질관리원 · 과제명 '공익직불제 이행점검 자동화를 위한 드론 영상 밭작물 판별 모델 개발'</li>
+                                    <li><span>소속</span>: 서울대학교 바이오시스템공학과 생체물성연구실</li>
+                                    <li><span>역할</span>: 데이터 전처리 및 딥러닝 객체 인식 모델 개발 담당</li>
+                                    <li><span>성과</span>: Oral (사)한국농업기계학회 2025 추계학술대회 · 제1저자</li>
                                 </ul>
                                 <a class="repo-btn" href="https://github.com/seongmi98/drone-cropgroup-segmentation" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> GitHub 저장소 →</a>
                             </div>
@@ -94,7 +96,7 @@
 
                     <div class="case-section">
                         <h3>배경</h3>
-                        <p>국내 밭농업은 소규모 필지에 여러 작물이 혼재됨. 공익직불제 이행점검 자동화를 위해 드론 RGB 영상에서 배추·무·양파·마늘 4종을 픽셀 단위로 구분해야 함. 배추·무는 넓은 잎, 양파·마늘은 가늘고 선형적인 지상부로 각 작물군 내 형태가 유사함. 이 유사성을 반영해 배추·무 / 양파·마늘 두 개의 3-class 분리 모델을 구성하고, 통합 5-class 모델을 기준으로 삼음.</p>
+                        <p>국내 밭농업은 소규모 필지에 여러 작물이 혼재됨. 공익직불제 이행점검 자동화를 위해 드론 RGB 영상에서 배추·무·양파·마늘 4종을 픽셀 단위로 구분해야 함. 4종을 한 모델에 묶을 이유가 실제 운용에서는 크지 않음. 배추·무와 양파·마늘은 <b>주산지가 갈려 한 지역 드론 영상에 같이 나올 일이 사실상 없기 때문</b>. 그래서 배포 단위인 지역에 맞춰 배추·무 / 양파·마늘 두 개의 3-class 모델로 나누고, 통합 5-class 모델을 기준으로 삼음. 대신 학습하지 않은 작물을 대상으로 오탐할 위험이 새로 생기는데, 이를 어떻게 막았는지가 이 연구의 핵심임.</p>
                         <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/workflow.png" alt="연구 전체 워크플로우: 드론 RGB 5-class 데이터(master 5-fold) → 아키텍처 비교(Mask2Former 선정) → 작물군 분리(3-class remap) → 배경 ablation·FP 평가(bg10 선정) → 고도별 실험(all/low/mid/high)"></div>
                     </div>
 
@@ -105,13 +107,13 @@
 
                     <div class="case-section">
                         <h3>아키텍처 선정</h3>
-                        <p>통합 5-class 데이터에서 DeepLabV3+, SegNeXt, Mask2Former를 동일 조건 5-fold 교차검증으로 비교. Mask2Former가 <span class="num">mIoU 80.08 ± 3.42%</span>로 가장 높고 클래스 간 성능도 균형적이어서 기본 모델로 선정함(SegNeXt 76.91%, DeepLabV3+ 46.85%).</p>
-                        <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/architecture.png" alt="아키텍처별 5-class IoU 비교: Mask2Former(mIoU 80.1) > SegNeXt(76.9) > DeepLabV3+(46.9). 클래스별(배경·배추·무·양파·마늘)로도 Mask2Former가 균형적"></div>
+                        <p>통합 5-class 데이터에서 DeepLabV3+, SegNeXt, Mask2Former를 동일 조건 5-fold 교차검증으로 비교. Mask2Former가 <span class="num">mIoU 80.08 ± 3.42%</span>로 가장 높고 클래스 간 성능도 균형적이어서 기본 모델로 선정함(SegNeXt 76.91 ± 3.30%, DeepLabV3+ 76.77 ± 5.26%). 세 모델의 mIoU 자체는 비슷한 수준이고, 클래스 간 편차가 가장 작은 Mask2Former를 택함.</p>
+                        <div class="case-image-slot" style="max-width:620px;margin-left:auto;margin-right:auto;"><img src="img/case-studies/segmentation/architecture.png" alt="아키텍처별 5-class mIoU 비교: Mask2Former 80.08% > SegNeXt 76.91% > DeepLabV3+ 76.77%. 클래스별(배경·배추·무·양파·마늘)로는 Mask2Former가 가장 균형적"></div>
                     </div>
 
                     <div class="case-section">
                         <h3>작물군 분리 효과</h3>
-                        <p>통합 5-class 대비 작물군 분리 3-class 모델에서 네 작물 모두 IoU가 향상됨. 배추 <span class="num">+12.28pp</span>(73.62→85.90), 무 +9.42pp(81.35→90.77), 양파 +3.37pp(84.87→88.24), 마늘 +4.79pp(78.41→83.20). 형태가 유사한 두 작물과 배경으로 학습 범위를 좁히니 각 작물의 형태·경계 특징을 더 집중적으로 학습함.</p>
+                        <p>통합 5-class 대비 작물군 분리 3-class 모델에서 네 작물 모두 IoU가 향상됨. 배추 <span class="num">+11.15%p</span>(73.62에서 84.77로), 무 +9.03%p(81.35에서 90.38로), 마늘 +5.49%p(78.41에서 83.90으로), 양파 +3.77%p(84.87에서 88.64로). 학습 범위를 두 작물과 배경으로 좁히니 각 작물의 형태·경계 특징을 더 집중적으로 학습함. <span class="num">여기 값은 순수한 작물군 분리 효과</span>로, 뒤에 나오는 비대상 영상 10% 추가 효과는 포함하지 않음.</p>
                     </div>
 
                     <div class="case-section">
@@ -151,7 +153,7 @@
                             <div class="f_title">
                                 <h3>About Me</h3>
                             </div>
-                            <p>센서·영상 데이터 기반 품질 예측 모델을 개발하는 데이터 사이언티스트입니다.</p>
+                            <p>객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발하는 엔지니어입니다.</p>
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

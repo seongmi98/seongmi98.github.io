@@ -4,15 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>실시간 객체 탐지 모델 비교·선정 — 선성미</title>
+        <title>레이저 제초로봇 객체 탐지 모델 — 선성미</title>
         <meta name="description" content="객체 탐지 모델 5종 비교·선정 및 레이저 제거 로봇 시스템 적용.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://seongmi98.github.io/project-detection">
-        <meta property="og:title" content="실시간 객체 탐지 모델 비교·선정 — 선성미">
+        <meta property="og:title" content="레이저 제초로봇 객체 탐지 모델 — 선성미">
         <meta property="og:description" content="객체 탐지 모델 5종 비교·선정 및 레이저 제거 로봇 시스템 적용.">
         <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="실시간 객체 탐지 모델 비교·선정 — 선성미">
+        <meta name="twitter:title" content="레이저 제초로봇 객체 탐지 모델 — 선성미">
         <meta name="twitter:description" content="객체 탐지 모델 5종 비교·선정 및 레이저 제거 로봇 시스템 적용.">
         <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
                         <div class="page_link">
                             <a href="./">Home</a>
                             <a href="portfolio">Portfolio</a>
-                            <a href="project-detection">객체 탐지 모델 비교·선정</a>
+                            <a href="project-detection">레이저 제초로봇 객체 탐지</a>
                         </div>
                     </div>
                 </div>
@@ -81,12 +81,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio_right_text">
-                                <h4>실시간 객체 탐지 모델 비교·선정 및 로봇 시스템 적용</h4>
+                                <h4>레이저 제초로봇용 실시간 객체 탐지 모델 개발</h4>
                                 <ul class="list">
-                                    <li><span>기간</span>: <b class="mono">2024.01–2024.12</b></li>
-                                    <li><span>소속</span>: 국립순천대학교 대학원 농업기계공학과 · 스마트농업공학기술연구실 (지도교수 김혁주)</li>
-                                    <li><span>역할</span>: 데이터 수집 · 라벨링 · 학습 파이프라인 구축 · 모델 비교 평가 · 최종 모델 선정 담당</li>
-                                    <li><span>성과</span>: 공학석사 학위논문 · (사)한국농업기계학회 2024 추계학술대회 <b>우수 논문 발표상</b> · CIGR 2024 국제학회 발표</li>
+                                    <li><span>기간</span>: <b class="mono">2023.09~2024.12</b></li>
+                                    <li><span>발주기관</span>: 중소벤처기업부(중소기업기술정보진흥원) · 과제명 'AI기술을 이용한 배추 제초·수확·포장 다목적 협동로봇 개발'</li>
+                                    <li><span>소속</span>: 국립순천대학교 대학원 농업기계공학과 스마트농업공학기술연구실 (지도교수 김혁주)</li>
+                                    <li><span>역할</span>: 데이터 수집 및 딥러닝 객체 인식 모델 개발 담당</li>
+                                    <li><span>성과</span>: 레이저 제초로봇 탑재 후 <b>공인 성능시험 목표인식률 95.7%</b>(목표 90%, 성적서 24-KOATMP-236) · 공학석사 학위논문 · (사)한국농업기계학회 2024 추계학술대회 <b>우수 논문 발표상</b> · CIGR 2024 국제학회 발표</li>
                                 </ul>
                                 <a class="repo-btn" href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=e0156e208a87526cffe0bdc3ef48d419&keyword=%EC%84%A0%EC%84%B1%EB%AF%B8" target="_blank" rel="noopener"><i class="fa fa-file-text-o" aria-hidden="true"></i> 학위논문 보기 (RISS) →</a>
                             </div>
@@ -177,8 +178,15 @@
                     </div>
 
                     <div class="case-section">
+                        <h3>실장비 탑재와 공인 성능시험</h3>
+                        <p>선정한 YOLOv11 모델을 레이저 제초로봇 <b>ROVERSE WR-1</b>에 탑재하고, <b>Intel RealSense D457</b> 카메라와 <b>NVIDIA Jetson AGX Orin</b> 보드에서 실시간 추론하도록 구성함. 학습 데이터를 찍은 카메라와 실제 탑재 장비가 다르다는 점이 가장 큰 위험 요소였음.</p>
+                        <p>문제는 시험 자체가 없었다는 것임 — <b>해당 분야에는 인증 시험방법이 존재하지 않아, 검정기관과 협의해 시험방법부터 제정</b>하고 평가 항목과 합격 기준을 함께 정의함.</p>
+                        <p><b>한국농업기술진흥원 입회 성능시험 결과 인공지능 목표인식률 <span class="num">95.7%</span></b>로 목표치 90%를 충족함(성적서 <b class="mono">24-KOATMP-236</b>). 연구실 지표가 아니라 <b>공인기관 시험으로, 장비가 바뀌어도 목표 성능이 유지되는 것을 확인</b>한 부분임.</p>
+                    </div>
+
+                    <div class="case-section">
                         <h3>결과와 한계</h3>
-                        <p>배추 모종 F1 <span class="num">0.943</span> / mAP@0.5 <span class="num">0.976</span>, 잡초 F1 0.783 / mAP@0.5 0.802, end-to-end <span class="num">12.2ms</span>의 YOLOv11 모델을 레이저 제초 로봇 인지 모듈로 확정함.</p>
+                        <p>배추 모종 F1 <span class="num">0.943</span> / mAP@0.5 <span class="num">0.976</span>, 잡초 F1 0.783 / mAP@0.5 0.802, end-to-end <span class="num">12.2ms</span>의 YOLOv11 모델을 레이저 제초 로봇 인지 모듈로 확정하고, 공인 성능시험에서 목표인식률 <span class="num">95.7%</span>로 검증함.</p>
                         <p>한계도 명확함 — <b>잡초 성능이 배추 모종보다 뚜렷하게 낮음.</b> 잡초는 종이 다양하고 형태가 불규칙하며 크기가 작아 선행 연구 대비로도 낮은 편임. 원본 이미지와 크롭 이미지를 혼합한 학습, 그리고 실제 포장에서의 실시간 검증이 후속 과제로 남음.</p>
                     </div>
 
@@ -189,6 +197,8 @@
                         <span class="tag">Faster R-CNN</span>
                         <span class="tag">Real-time Inference</span>
                         <span class="tag">Dataset Design</span>
+                        <span class="tag">Jetson AGX Orin</span>
+                        <span class="tag">공인 성능시험 95.7%</span>
                     </div>
                 </div>
             </div>
@@ -204,7 +214,7 @@
                             <div class="f_title">
                                 <h3>About Me</h3>
                             </div>
-                            <p>센서·영상 데이터 기반 품질 예측 모델을 개발하는 데이터 사이언티스트입니다.</p>
+                            <p>객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발하는 엔지니어입니다.</p>
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

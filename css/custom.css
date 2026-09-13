@@ -425,3 +425,45 @@
 .case-table tr:last-child td { border-bottom: none; }
 .case-table .sel { color: #0F766E; font-weight: 700; }
 .case-note { font-size: 12.5px; color: #6B7280; margin-top: 6px; }
+
+
+/* ── key result line on project cards / list (added 2026-09) ── */
+.project-title-list .proj-result {
+  display: block;
+  margin-top: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #0F766E;
+  letter-spacing: -0.01em;
+}
+.project-card-plain p.card-result {
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: #0F766E;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+/* ── skills detail (about page) ── */
+.skill-group { padding: 22px 0; border-top: 1px solid #ededed; }
+.skill-group:last-child { border-bottom: 1px solid #ededed; }
+.skill-group h4 {
+  font-family: 'Heebo', sans-serif;
+  font-size: 17px; font-weight: 700; color: #222222; margin-bottom: 14px;
+}
+.skill-group h4 .en {
+  font-size: 12px; font-weight: 500; color: #999999;
+  letter-spacing: 0.06em; text-transform: uppercase; margin-left: 8px;
+}
+.skill-line { display: flex; gap: 18px; margin-bottom: 10px; }
+.skill-line:last-child { margin-bottom: 0; }
+.skill-key {
+  flex: 0 0 118px; font-size: 13.5px; font-weight: 700; color: #555555; line-height: 1.7;
+}
+.skill-val { flex: 1; font-size: 14px; color: #777777; line-height: 1.75; }
+@media (max-width: 575px) {
+  .skill-line { display: block; }
+  .skill-key { display: block; margin-bottom: 2px; }
+}

@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>초분광 영상 기반 대추 함수율 비파괴 선별 — 선성미</title>
-        <meta name="description" content="초분광 영상(Specim FX10, KSP-3) 기반 대추 함수율 비파괴 선별 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
+        <title>초분광 기반 건대추 함수율 비파괴 예측 모델 개발 — 선성미</title>
+        <meta name="description" content="초분광 영상(Specim FX10, KSP-3) 기반 건대추 함수율 비파괴 예측 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://seongmi98.github.io/project-hyperspectral">
-        <meta property="og:title" content="초분광 영상 기반 대추 함수율 비파괴 선별 — 선성미">
-        <meta property="og:description" content="초분광 영상(Specim FX10, KSP-3) 기반 대추 함수율 비파괴 선별 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
+        <meta property="og:title" content="초분광 기반 건대추 함수율 비파괴 예측 모델 개발 — 선성미">
+        <meta property="og:description" content="초분광 영상(Specim FX10, KSP-3) 기반 건대추 함수율 비파괴 예측 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
         <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="초분광 영상 기반 대추 함수율 비파괴 선별 — 선성미">
-        <meta name="twitter:description" content="초분광 영상(Specim FX10, KSP-3) 기반 대추 함수율 비파괴 선별 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
+        <meta name="twitter:title" content="초분광 기반 건대추 함수율 비파괴 예측 모델 개발 — 선성미">
+        <meta name="twitter:description" content="초분광 영상(Specim FX10, KSP-3) 기반 건대추 함수율 비파괴 예측 — VNIR vs NIR 센서 비교를 개체 단위 GroupKFold로 검증한 PLSR 파이프라인.">
         <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
@@ -61,7 +61,7 @@
                         <div class="page_link">
                             <a href="./">Home</a>
                             <a href="portfolio">Portfolio</a>
-                            <a href="project-hyperspectral">대추 함수율 비파괴 선별</a>
+                            <a href="project-hyperspectral">건대추 함수율 비파괴 예측</a>
                         </div>
                     </div>
                 </div>
@@ -81,11 +81,12 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio_right_text">
-                                <h4>초분광 영상 기반 대추 함수율 비파괴 선별</h4>
+                                <h4>초분광 기반 건대추 함수율 비파괴 예측 모델 개발</h4>
                                 <ul class="list">
-                                    <li><span>기간</span>: <b class="mono">2025.09–2025.12</b></li>
-                                    <li><span>소속</span>: 서울대학교 생체물성연구실 · 산림청 「스마트 산림경영 혁신성장 기술개발」 국가 R&amp;D — 「인공지능 기반 임산물 결점·병해충·당도 비파괴 선별기술 개발」 (총괄 주관 KIRO · 서울대 위탁)</li>
-                                    <li><span>역할</span>: 측정 시스템 구축 · 데이터 취득 · 전처리 · 모델링 · 검증 담당</li>
+                                    <li><span>기간</span>: <b class="mono">2025.09~2025.12</b></li>
+                                    <li><span>발주기관</span>: 산림청(한국임업진흥원) · 과제명 '인공지능 기반 임산물 결점, 병해충, 당도 비파괴 선별기술 개발' (총괄 주관 KIRO · 서울대 위탁)</li>
+                                    <li><span>소속</span>: 서울대학교 바이오시스템공학과 생체물성연구실</li>
+                                    <li><span>역할</span>: 초분광 데이터 수집, 전처리, 회귀 모델 개발과 센서 비교 담당</li>
                                 </ul>
                                 <a class="repo-btn" href="https://github.com/seongmi98/jujube-hsi-moisture" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> GitHub 저장소 →</a>
                             </div>
@@ -100,7 +101,7 @@
                     <div class="case-section">
                         <h3>데이터 수집</h3>
                         <p>Specim FX10(400–1000nm, VNIR, 224밴드)과 KSP-3(900–1700nm, NIR, 640밴드) <b>카메라 2종</b>으로 고정형 라인스캐닝 시스템 구축. 벨트 컨베이어, 할로겐 150W×2 양측 45° 조사, 스캔속도 <span class="num">5mm/s</span>, 촬영거리 <span class="num">93.5cm</span>.</p>
-                        <p>핵심은 <b>함수율 분포를 설계한 것</b>. 예측 대상 값이 좁은 구간에 몰리면 회귀가 의미를 잃기 때문에, 등급별 시료를 상온(20–25℃)·저온(0–4℃) 2개 저장군으로 나눠 보관하며 <span class="num">7회차</span>에 걸쳐 촬영함. 개체 <span class="num">327개</span>를 앞·뒤면 촬영해 스펙트럼 <span class="num">654건</span> 확보, 실측 함수율 24.3–39.6%.</p>
+                        <p>핵심은 <b>함수율 분포를 설계한 것</b>. 예측 대상 값이 좁은 구간에 몰리면 회귀가 의미를 잃기 때문에, 등급별 시료를 냉장 보관하며 <span class="num">7회차</span>에 걸쳐 촬영함. 개체 <span class="num">327개</span>를 앞·뒤면 촬영해 스펙트럼 <span class="num">654건</span> 확보, 실측 함수율 24.3–39.6%.</p>
                         <p>기준값은 오븐 105℃ 24시간 건조 → 데시케이터 30분 방랭 → 건·습 중량차로 산출.</p>
                         <figure class="case-figure">
                             <img src="img/case-studies/jujube/acquisition_setup.svg" alt="초분광 영상 수집 시스템 구성도">
@@ -139,7 +140,7 @@
 
                     <div class="case-section">
                         <h3>검증</h3>
-                        <p>수치를 확정하기 전에 파이프라인을 네 단계로 검증함. <b>네 건 모두 결과를 낮추는 방향이었음.</b></p>
+                        <p>수치를 확정하기 전에 파이프라인 전 단계를 되짚는 검증을 설계해 총 <span class="num">5건</span>을 정정함. <b>정정은 모두 결과를 낮추는 방향이었지만, 검증된 값을 최종 수치로 확정함.</b></p>
                         <ul class="case-list">
                             <li><b>파이프라인 오류 3건</b> — 서로 다른 5개 실행의 결과 그림이 md5 기준 완전히 동일한 이상 징후에서 출발. 학습 스크립트의 입력 경로가 다른 센서 폴더를 가리키고 있었고, 큐브 축 정의가 센서와 불일치했으며, white/dark 보정이 에러 없이 건너뛰어지고 있었음.</li>
                             <li><b>비교 조건 정정</b> — 밴드 수 기준 통제를 파장(nm) 기준으로 재설계.</li>
@@ -159,7 +160,7 @@
                             <li><b>NIR (KSP-3, 900–1700nm)</b> — R² <span class="num">0.637</span> / RMSE <span class="num">1.686</span> / RPD <span class="num">1.66</span> → 선별 가능</li>
                             <li><b>VNIR (Specim FX10, 400–1000nm)</b> — R² <span class="num">0.356</span> / RMSE <span class="num">2.244</span> / RPD <span class="num">1.25</span> → 선별 부적합</li>
                         </ul>
-                        <p>네 가지 분할 방식 전부에서 NIR이 앞섬. 물의 O–H 배음 흡수는 차수가 올라갈수록 약 10배씩 약해지는데, VNIR이 볼 수 있는 970nm는 NIR이 보는 1450nm 대비 약 <b>1/100</b> 세기인 데다 실리콘 검출기의 감도가 급감하는 스펙트럼 끝자락에 위치함. <b>측정 결과가 분광학적 예측과 일치</b>하며, 이는 후속 선별기의 센서 사양을 NIR로 결정하는 근거가 됨.</p>
+                        <p>네 가지 분할 방식 전부에서 NIR이 앞섬. NIR가 보는 <b>1,450nm는 물 O–H 신축진동의 1차 배음</b>이고, VNIR가 볼 수 있는 <b>970nm는 2차 배음</b>이라 흡수가 훨씬 약함. 게다가 970nm는 실리콘 검출기의 감도가 급감하는 스펙트럼 끝자락에 위치함. <b>측정 결과가 분광학적 예측과 일치</b>하며, 이는 후속 선별기의 센서 사양을 NIR로 결정하는 근거가 됨.</p>
                         <p>함수율이 28–34%에 71% 몰려 있어(IQR 3.65%p) R² 단독으로는 성능이 과소평가됨. 그래서 RPD를 병기했고, <b>현 성능은 정량 예측이 아닌 선별(screening) 수준</b>임을 명시함.</p>
                     </div>
 
@@ -184,7 +185,7 @@
                             <div class="f_title">
                                 <h3>About Me</h3>
                             </div>
-                            <p>센서·영상 데이터 기반 품질 예측 모델을 개발하는 데이터 사이언티스트입니다.</p>
+                            <p>객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발하는 엔지니어입니다.</p>
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
