@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>AI 사과 선별기 개발 및 현장 적용 | 선성미</title>
+        <meta name="description" content="다시점 카메라 기반 사과 검출·결함 분할·등급 판정 파이프라인 개발과 실제 선별기 현장 검증.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://seongmi98.github.io/project-apple">
+        <meta property="og:title" content="AI 사과 선별기 개발 및 현장 적용 | 선성미">
+        <meta property="og:description" content="다시점 카메라 기반 사과 검출·결함 분할·등급 판정 파이프라인 개발과 실제 선별기 현장 검증.">
+        <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="AI 사과 선별기 개발 및 현장 적용 | 선성미">
+        <meta name="twitter:description" content="다시점 카메라 기반 사과 검출·결함 분할·등급 판정 파이프라인 개발과 실제 선별기 현장 검증.">
+        <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+    <body>
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu" id="mainNav">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container box_1620">
+                        <a class="navbar-brand logo_h logo_text" href="./">선성미<span class="name-en">Seongmi Sun</span></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="portfolio">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Project Detail</h2>
+                        <div class="page_link">
+                            <a href="./">Home</a>
+                            <a href="portfolio">Portfolio</a>
+                            <a href="project-apple">AI 사과 선별기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="band-bar-wrap">
+                                <div class="band-bar band-rgb"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio_right_text">
+                                <h4>딥러닝 기반 AI 사과 선별기 개발 및 현장 적용</h4>
+                                <ul class="list">
+                                    <li><span>기간</span>: <b class="mono">2026.01~2026.08</b></li>
+                                    <li><span>발주기관</span>: ㈜한국선별기술 (민간지원사업) · 과제명 '인공지능 사과 선별기술 개발'</li>
+                                    <li><span>소속</span>: 서울대학교 바이오시스템공학과 생체물성연구실</li>
+                                    <li><span>역할</span>: 전처리 설계, 결함 분할 모델 개발, 등급 판정 로직 개발(기준은 업체 협의), 현장 검증</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-body">
+                    <div class="case-overview" id="overview">
+                        <span class="case-kicker">개요</span>
+                        <p>카메라 3대로 촬영한 사과 영상에서 표면 결함을 픽셀 단위로 분할하고, 결함 면적 비율로 등급을 판정하는 선별 파이프라인을 개발함. 사과 검출(YOLO26, 123 FPS)로 ROI를 잘라 분할 모델(SegFormer)에 넣는 구조로 정확도와 속도를 함께 맞췄고, 실제 가동 중인 선별기에서 사과 2,124개를 초당 4.19개로 판정함. 현장 점검에서는 촬영되지 않는 표면을 남은 오판정 원인으로 찾아 촬영 18장 확대와 3차원 형상화를 제안함.</p>
+                    </div>
+                    <nav class="case-toc">
+                        <a href="#overview">개요</a>
+                        <a href="#problem">문제 정의</a>
+                        <a href="#data">데이터</a>
+                        <a href="#approach">해결 방식</a>
+                        <a href="#result">결과</a>
+                        <a href="#conclusion">결론</a>
+                    </nav>
+
+                    <div class="case-section" id="problem">
+                        <span class="case-kicker">문제 정의</span>
+                        <h3>배경</h3>
+                        <p>사과는 멍, 상처, 병반, 열과 같은 표면 결함에 따라 등급이 갈리지만, 산지유통센터의 결함 선별은 여전히 작업자의 육안 판정에 의존함. 판정 편차가 크고 처리 속도를 올리기 어려움.</p>
+                        <p>등급은 결함의 <b>유무만이 아니라 종류와 크기</b>로 정해짐. 그래서 결함 위치만 박스로 잡는 객체 탐지가 아니라, 결함 면적을 픽셀 단위로 계산할 수 있는 <b>시맨틱 분할</b> 기반으로 시스템을 설계함. 목표는 촬영부터 등급 판정, 선별 신호 출력까지 이어지는 통합 선별 파이프라인임.</p>
+                    </div>
+
+                    <div class="case-section" id="data">
+                        <span class="case-kicker">데이터</span>
+                        <h3>시스템 구성과 다시점 촬영</h3>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/apple/system_overview.jpg" alt="사과 선별 시스템 구성">
+                            <figcaption>트리거 센서, 카메라 3대, 롤러 컨베이어로 구성된 선별부와 처리 흐름</figcaption>
+                        </figure>
+                        <p>롤러 위를 구르는 사과를 트리거 센서 신호에 맞춰 좌·상·우 <b>카메라 3대</b>(Triton 5MP, 2448×2048)로 촬영함. 사과가 회전하는 동안 3번 촬영해 <b>사과당 9장</b>을 확보하고, 한 시점에서 보이지 않는 면을 다른 시점이 보완하도록 구성함. 추론은 RTX 5070 Ti 워크스테이션에서 수행.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">데이터</span>
+                        <h3>학습 데이터</h3>
+                        <table class="case-table">
+                            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+                            <tbody>
+                                <tr><td>사과 검출</td><td>Grounding DINO(텍스트 프롬프트 'Apple')로 박스 라벨 자동 생성 후 검수 · 사과 있음 <span class="num">940</span>장 / 빈 트레이 <span class="num">118</span>장</td></tr>
+                                <tr><td>결함 분할</td><td>후지 품종 결함 이미지 <span class="num">900</span>장 · Crack, Bruise, Disease, Scar 4종 · 학습:검증:테스트 = 8:1:1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="case-section" id="approach">
+                        <span class="case-kicker">해결 방식</span>
+                        <h3>전처리: 결함이 작아지지 않게</h3>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/apple/preprocessing.jpg" alt="분할 입력 전처리 비교">
+                            <figcaption>① 검출 후 ROI 크롭(채택) ② 원본 전체 입력 ③ 원본 축소 입력 비교</figcaption>
+                        </figure>
+                        <p>2448×2048 원본을 그대로 분할 모델에 넣으면 연산량이 커서 선별 속도를 맞출 수 없고, 통째로 512×512로 줄이면 <b>작은 결함이 몇 픽셀로 뭉개져 정확도가 떨어짐</b>.</p>
+                        <p>그래서 프레임을 사과 단위로 자른 뒤, 가벼운 검출 모델로 <b>트레이에 사과가 있는지 먼저 확인</b>하고 사과 영역만 크롭해 분할 모델에 넣는 구조로 설계함. 빈 트레이는 분할을 건너뛰어 연산을 줄이고, 배경 노이즈도 함께 줄임.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">해결 방식</span>
+                        <h3>사과 검출 모델 선정</h3>
+                        <table class="case-table">
+                            <thead><tr><th>모델</th><th>mAP@0.5</th><th>mAP@[.5:.95]</th><th>속도 (TensorRT, FP32)</th></tr></thead>
+                            <tbody>
+                                <tr><td>RT-DETR (ResNet-18)</td><td>1.00</td><td>0.97</td><td>73.81 FPS · 13.55 ms/img</td></tr>
+                                <tr><td><b>YOLO26</b></td><td><b>1.00</b></td><td><b>0.99</b></td><td><b>123.08 FPS · 8.12 ms/img</b></td></tr>
+                            </tbody>
+                        </table>
+                        <p class="case-note">테스트 1,058장 · 입력 640×640</p>
+                        <p>두 모델의 정확도는 사실상 같았음. 선별기는 매 프레임 검출이 먼저 끝나야 다음 단계로 넘어가므로, 정확도가 같다면 <b>속도가 1.67배 빠른 YOLO26</b>을 채택함.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">해결 방식</span>
+                        <h3>결함 분할 모델 선정</h3>
+                        <table class="case-table">
+                            <thead><tr><th>모델</th><th>Crack</th><th>Bruise</th><th>Disease</th><th>Scar</th><th>mIoU</th><th>추론 시간</th></tr></thead>
+                            <tbody>
+                                <tr><td>Mask2Former (Swin-S)</td><td>64.2</td><td>62.2</td><td>53.6</td><td>52.4</td><td>58.1</td><td>18.78 ms/img</td></tr>
+                                <tr><td><b>SegFormer (MiT-B5)</b></td><td>58.4</td><td>63.3</td><td>55.7</td><td>49.3</td><td>56.7</td><td><b>10.42 ms/img</b></td></tr>
+                            </tbody>
+                        </table>
+                        <p class="case-note">IoU(%) · 입력 512×512 · TensorRT, FP32</p>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/apple/segformer_results.jpg" alt="SegFormer 결함 분할 결과">
+                            <figcaption>SegFormer 테스트 결과: 원본 / 정답 / 예측</figcaption>
+                        </figure>
+                        <p>mIoU 차이는 <span class="num">1.4%p</span>인 반면 추론은 SegFormer가 <b>1.8배</b> 빨랐음. 사과 한 개당 9장을 처리해야 하는 구조라 장당 시간이 전체 처리량을 좌우하므로 SegFormer를 채택함.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">해결 방식</span>
+                        <h3>등급 판정 로직</h3>
+                        <figure class="case-figure">
+                            <img src="img/case-studies/apple/severity_grading.jpg" alt="결함 면적 비율 기반 등급 판정">
+                            <figcaption>결함 면적 비율에 따른 등급 예시(Scar, Bruise)와 RS-232 선별 신호 출력</figcaption>
+                        </figure>
+                        <p>분할 결과에서 <b>결함 면적 비율 = 결함 픽셀 면적 ÷ 사과 픽셀 면적 × 100</b>을 계산하고, 사과 한 개의 9장 판정이 모두 끝난 뒤 최종 등급을 확정함. 등급은 특(Premium), 보통(Normal), 불량(Defective) 3단계이며, 기준은 선별기 업체와 협의해 정함. 확정된 등급은 RS-232 신호로 선별 제어기에 전달되어 등급별 배출구로 분기됨.</p>
+                    </div>
+
+                    <div class="case-section" id="result">
+                        <span class="case-kicker">결과</span>
+                        <h3>현장 검증</h3>
+                        <table class="case-table">
+                            <thead><tr><th>항목</th><th>결과</th></tr></thead>
+                            <tbody>
+                                <tr><td>평가한 사과</td><td><span class="num">2,124</span>개 (실제 가동 중인 컨베이어)</td></tr>
+                                <tr><td>처리 속도</td><td>초당 <span class="num">4.19</span>개 · 판정 간격 <span class="num">238.6</span> ms</td></tr>
+                                <tr><td>출력</td><td>등급 판정 → RS-232 신호 → 배출구 3개로 분류</td></tr>
+                            </tbody>
+                        </table>
+                        <p>실제 가동 중인 선별기에서 검출, 분할, 등급 판정이 한 파이프라인으로 실시간 동작하는 것을 확인함.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">결과</span>
+                        <h3>현장 점검과 개선 제안</h3>
+                        <p>현장 운용을 점검하면서 연구실 결과와 현장 결과 사이의 차이를 추적함. 수백 개의 사과를 반복 투입하며 판정 결과와 촬영 영상을 대조한 결과, 사과마다 크기와 형상, 회전 상태가 달라 <b>객체당 9장으로는 표면 일부가 촬영되지 않는 경우</b>가 있었음.</p>
+                        <ul class="case-list">
+                            <li><b>촬영 횟수 확대</b>: 객체당 <span class="num">9장</span>에서 <span class="num">18장</span>으로 단계적으로 늘려 전체 표면을 담는 최소 촬영 조건을 찾는 방식 제안</li>
+                            <li><b>3차원 형상화</b>: 촬영 장수가 늘면 같은 결함이 여러 장에서 중복 검출되므로, 개체를 3차원으로 형상화해 결함을 하나로 묶는 방식 검토</li>
+                            <li><b>운영 피드백</b>: 조명, 장비 세팅, 사용자 화면 구성에서 발견한 문제점을 정리해 개발 담당자와 공유</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-section" id="conclusion">
+                        <span class="case-kicker">결론</span>
+                        <h3>정리</h3>
+                        <p>모델 정확도만이 아니라 <b>선별기가 요구하는 처리 속도와 결함 크기</b>를 기준으로 전처리 구조와 모델을 골랐고, 그 결과 실제 컨베이어에서 초당 약 4.2개를 실시간 판정함. 현장 점검에서는 남은 오판정의 원인을 모델이 아닌 촬영 조건에서 찾아 다음 개선 방향을 제시함.</p>
+                        <p class="case-note">촬영 18장 확대와 3차원 형상화는 참여 기간(2026.08 종료) 중 제안·검토 단계까지 진행함.</p>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">YOLO26</span>
+                        <span class="tag">RT-DETR</span>
+                        <span class="tag">SegFormer</span>
+                        <span class="tag">Mask2Former</span>
+                        <span class="tag">Grounding DINO</span>
+                        <span class="tag">TensorRT</span>
+                        <span class="tag">Multi-view Inspection</span>
+                    </div>
+                    </div><!-- /.case-body -->
+                </div>
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+
+        <!--================Footer Area =================-->
+        <footer class="footer_area p_120">
+            <div class="container">
+                <div class="row footer_inner">
+                    <div class="col-lg-5 col-sm-6">
+                        <aside class="f_widget ab_widget">
+                            <div class="f_title">
+                                <h3>About Me</h3>
+                            </div>
+                            <p>객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발하는 엔지니어입니다.</p>
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </aside>
+                    </div>
+                    <div class="col-lg-5 col-sm-6">
+                        <aside class="f_widget">
+                            <div class="f_title">
+                                <h3>Contact</h3>
+                            </div>
+                            <p><a href="mailto:ddl05059@naver.com">ddl05059@naver.com</a></p>
+                            <p><a href="https://github.com/seongmi98" target="_blank" rel="noopener">github.com/seongmi98</a></p>
+                        </aside>
+                    </div>
+                    <div class="col-lg-2">
+                        <aside class="f_widget social_widget">
+                            <div class="f_title">
+                                <h3>Follow Me</h3>
+                            </div>
+                            <ul class="list">
+                                <li><a href="https://github.com/seongmi98" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
+                                <li><a href="mailto:ddl05059@naver.com"><i class="fa fa-envelope"></i></a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--================End Footer Area =================-->
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>

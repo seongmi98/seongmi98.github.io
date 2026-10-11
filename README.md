@@ -18,11 +18,13 @@ Live at: <https://seongmi98.github.io>
 |---|---|
 | `index.html` | Home — hero, intro + headline metrics, tech stack summary, project previews |
 | `about.html` | About — full intro, detailed tech stack, education/career/certification, awards, presentations |
-| `portfolio.html` | Portfolio — filterable grid of all 4 research projects |
+| `portfolio.html` | Portfolio — filterable grid of all 5 research projects + side project |
 | `project-detection.html` | Object detection model comparison & robot deployment |
 | `project-segmentation.html` | Aerial RGB semantic segmentation |
 | `project-hyperspectral.html` | Hyperspectral non-destructive moisture regression |
 | `project-composite.html` | Hyperspectral composite-material classification (team project) |
+| `project-apple.html` | AI apple sorter field validation |
+| `project-tashu.html` | Side project — Tashu bike-share data analysis & outlier check |
 | `contact.html` | Contact — email/GitHub/resume links (no map, no form — see below) |
 | `resume.html` | Standalone print/PDF résumé page, unrelated styling, unchanged |
 | `CONTENT.md` | Source of truth for all site copy |

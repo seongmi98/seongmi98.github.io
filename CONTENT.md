@@ -1,4 +1,4 @@
-# CONTENT — seongmi98.github.io
+# CONTENT: seongmi98.github.io
 
 콘텐츠 원본. index.html 수정 시 문구는 여기를 기준으로 한다.
 
@@ -6,12 +6,12 @@
 
 - 이름: 선성미 (Seongmi Seon)
 - 직무 정의: 센서·영상 데이터 기반 품질 예측 모델 개발
-- 소속: 계약연구원 · 서울대학교 산학협력단 (바이오시스템공학과 생체물성연구실)
+- 소속: 연구원 · 서울대학교 농업생명과학연구원 (바이오시스템공학과 생체물성연구실)
 - 핵심 수치 3개 (mono):
   - 작물 IoU: +12.3%p (73.6% → 85.9%, 통합 5-class → 작물군 분리 3-class, 배추)
   - F1: 0.943
   - 추론속도: 1.86×
-- 버튼: 이력서 PDF(`assets/resume.pdf`, 아직 파일 없음 — 추후 추가) / 이메일 복사 / GitHub
+- 버튼: 이력서 PDF(`assets/resume.pdf`, 아직 파일 없음: 추후 추가) / 이메일 복사 / GitHub
 
 ## 소개 (3~4줄)
 
@@ -23,7 +23,7 @@
 ## Projects
 
 ### P.01 실시간 객체 탐지 모델 비교·선정 및 로봇 시스템 적용
-- 기간 / 소속: 2024.01–2024.12 · 국립순천대학교 · 석사 학위논문
+- 기간 / 소속: 2024.01~2024.12 · 국립순천대학교 · 석사 학위논문
 - 센서 대역: RGB (가시광)
 - 문제: 좁은 간격으로 혼재된 두 대상을 로봇이 실시간으로 구분해야 함
 - 접근: 직접 수집·라벨링한 이미지 234장으로 객체 탐지 모델 5종(YOLOv8, YOLOv11, RT-DETR, EfficientDet, Faster R-CNN) 학습·비교
@@ -32,38 +32,51 @@
 - Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
 
 ### P.02 항공 RGB 영상 시맨틱 분할 및 학습 전략 최적화
-- 기간 / 소속: 2025.03–2026.08 · 서울대학교 생체물성연구실
+- 기간 / 소속: 2025.03~2026.08 · 서울대학교 생체물성연구실
 - 센서 대역: RGB (가시광)
 - 문제: 항공 촬영 RGB 영상에서 배추·무·양파·마늘 4종을 픽셀 단위로 구분해야 함. 특히 작물군 분리 모델이 대상 작물 없는 인근 필지를 오탐(false-positive)하는 문제 해결 필요 (직불제 이행점검에서 치명적)
-- 접근: 통합 5-class로 아키텍처(DeepLabV3+/SegNeXt/Mask2Former) 비교 후 Mask2Former 선정. 형태 유사 작물을 배추·무 / 양파·마늘 두 작물군 3-class로 분리, 비대상 작물군 background-only 이미지 10% 추가로 오탐 억제. master 5-fold 교차검증, 촬영 고도(5–100m)별 민감도 분석
-- 결과: 작물군 분리로 4작물 IoU 모두 향상(배추 +12.28%p 등), 비대상 작물군 오탐을 42.6–67.9% → 0.5–0.7%로 억제. 고도 민감도는 작물군 의존적(배추·무 중고도, 양파·마늘 고고도에서 최고)
+- 접근: 통합 5-class로 아키텍처(DeepLabV3+/SegNeXt/Mask2Former) 비교 후 Mask2Former 선정. 형태 유사 작물을 배추·무 / 양파·마늘 두 작물군 3-class로 분리, 비대상 작물군 background-only 이미지 10% 추가로 오탐 억제. master 5-fold 교차검증, 촬영 고도(5~100m)별 민감도 분석
+- 결과: 작물군 분리로 4작물 IoU 모두 향상(배추 +12.28%p 등), 비대상 작물군 오탐을 42.6~67.9% → 0.5~0.7%로 억제. 고도 민감도는 작물군 의존적(배추·무 중고도, 양파·마늘 고고도에서 최고)
 - Tags: Semantic Segmentation, Mask2Former, Crop-Group Modeling, False-Positive Suppression
 - Detail: https://github.com/seongmi98/drone-cropgroup-segmentation
 
 ### P.03 초분광 영상 기반 대추 함수율 비파괴 예측
-- 기간 / 소속: 2025.09–2025.12 · 서울대학교 생체물성연구실 · 산림청 「스마트 산림경영 혁신성장 기술개발」 국가 R&D — 「인공지능 기반 임산물 결점·병해충·당도 비파괴 선별기술 개발」 (총괄 주관 KIRO · 서울대 위탁)
-- 센서 대역: Specim FX10 (400–1000nm, VNIR, 224밴드) · KSP-3 (900–1700nm, NIR, 640밴드, 수분 O-H 흡수대 포함)
-- 배경: 대추 수분 함량이 저장성·품질 좌우. 기존 측정(오븐건조법 등)은 파괴적이거나 표면 접촉식 — 비파괴 전체표면 측정 필요
+- 기간 / 소속: 2025.03~2025.12 · 서울대학교 생체물성연구실 · 산림청 「스마트 산림경영 혁신성장 기술개발」 국가 R&D: 「인공지능 기반 임산물 결점·병해충·당도 비파괴 선별기술 개발」 (총괄 주관 KIRO · 서울대 위탁)
+- 센서 대역: Specim FX10 (400~1000nm, VNIR, 224밴드) · KSP-3 (900~1700nm, NIR, 640밴드, 수분 O-H 흡수대 포함)
+- 배경: 대추 수분 함량이 저장성·품질 좌우. 기존 측정(오븐건조법 등)은 파괴적이거나 표면 접촉식: 비파괴 전체표면 측정 필요
 - 접근: 카메라 2종 촬영 시스템 구축 → SAM2 반자동 세그멘테이션 → 반사율 추출(Savitzky-Golay 스무딩) → 전처리 기법(SNV, MSC, SG, 1·2차 미분) 비교 → PLSR 회귀 모델 K-Fold 교차검증, R²·RMSE 평가
 - 결과: 라벨링 정확도 95% 이상 확보, 라벨링 공정 단축. 원본 데이터·라벨 비공개라 최종 R²/RMSE는 미공개
-- 이미지: docs/figures 참고 — reflectance_ksp.png, reflectance_specim.png, preprocessing_comparison_ksp.png, plsr_structure_diagram.png (다운로드해 img/case-studies/jujube/에 저장, 사이트에 삽입 완료)
+- 이미지: docs/figures 참고: reflectance_ksp.png, reflectance_specim.png, preprocessing_comparison_ksp.png, plsr_structure_diagram.png (다운로드해 img/case-studies/jujube/에 저장, 사이트에 삽입 완료)
 - Tags: Hyperspectral Imaging, PLSR, SAM2
 - Detail: https://github.com/seongmi98/jujube-hsi-moisture
 - 스타일 원칙: 프로젝트 상세 페이지는 압축된 문제/접근/결과 대신 배경-데이터수집-라벨링-반사율추출-전처리와모델링-결과 순서의 케이스 스터디 서술(.case-section)로 작성, 실제 이미지가 있으면 .case-image-slot/.case-image-row에 삽입, 없으면 "(추가 예정)" placeholder 유지. 문체는 음슴체(간결体), 실제 공개되지 않은 수치는 지어내지 않음
 - Detail: https://github.com/seongmi98 (임시. 개별 repo 만들어지면 그 URL로 교체)
 
 ### P.04 분광·초분광·측색 데이터 기반 복합재 물성 분류·예측 모델 (팀 프로젝트, 축약)
-- 기간 / 소속: 2025.07–2025.09 · 서울대학교 생체물성연구실 · 팀 프로젝트
+- 기간 / 소속: 2025.07~2025.09 · 서울대학교 생체물성연구실 · 팀 프로젝트
 - 센서 대역: Vis-NIR·NIR 초분광 카메라, 분광기, 측색계 (4종 센서)
 - 요약: 데이터 수집과 모델 개발 파트로 참여, Vis-NIR·NIR 초분광 카메라·분광기·측색계 4종 센서로 수집한 데이터에 전처리 및 특징 추출 기법 적용
 - Tags: Hyperspectral Imaging, Spectroscopy, Colorimetry, Feature Extraction
 
-### 기타 (Side Project) — portfolio.html 하단, 메인 4개보다 작은 비중으로 표시
+### P.05 딥러닝 기반 AI 사과 선별기 개발 및 현장 적용
+- 기간 / 소속: 2026.01~2026.08 · 서울대학교 생체물성연구실 · (주)한국선별기술 민간지원사업 「인공지능 사과 선별기술 개발」
+- 역할(본인 확인): 전처리, 결함 분할 모델 개발, 등급 판정 로직(기준은 업체 협의), 현장 검증. 시스템 연동(RS-232 등)은 직접 안 함
+- 시스템: 카메라 3대 × 회전 3회 = 사과당 9장 · 트리거 센서 · RTX 5070 Ti
+- 사과 검출: Grounding DINO 자동 라벨(940 + 빈 트레이 118) · YOLO26 mAP@0.5 1.00 / [.5:.95] 0.99 / 123.08 FPS vs RT-DETR 0.97 / 73.81 FPS → YOLO26
+- 결함 분할: 후지 900장, Crack/Bruise/Disease/Scar, 8:1:1 · Mask2Former mIoU 58.1 (18.78ms) vs SegFormer 56.7 (10.42ms) → SegFormer
+- 등급: 결함 면적 비율 = 결함 픽셀/사과 픽셀×100, 9장 확인 후 확정, 특/보통/불량
+- 현장: 사과 2,124개, 초당 4.19개, 238.6ms
+- 현장 점검: 9장으로 표면 일부 미촬영 → 18장 확대, 3차원 형상화 제안(제안·검토 단계)
+- 학회 발표는 사이트에 넣지 않음(본인 요청)
+- Detail: project-apple.html
 
-- 대전 공공자전거 '타슈' 대여 데이터 이상치 검증 및 재분석
-- 요약: 공공데이터 132만 건 중 '타슈관제센터 정비입고/정비대기'가 실제 대여소가 아니라 자전거 회수·정비 운영 로그임을 발견(평균 이용시간 4배 이상 차이로 검증), 이를 제외하고 인기 대여소·경로 재분석
+### 기타 (Side Project): portfolio.html 하단, 메인 4개보다 작은 비중으로 표시
+
+- 대전 공공자전거 '타슈' 대여 데이터 분석 및 이상치 검증 (석사 과정 통신용집적회로 기말 과제 + 이후 재검증)
+- 원 과제: 2022.08~12 대여이력 1,325,716건 + 기상청 기온·강수량. 평일 7~9시·17~20시, 주말 13~22시 집중 → 시간대별 스테이션 배치 최적화 제안. 일별 강수량 상관 −0.32, 기온 −0.055. 대여·반납 대여소/경로 상위 10 → 한밭수목원, 카이스트 등 공원·학교 주변
+- 후속 재검증 요약: 공공데이터 132만 건 중 '타슈관제센터 정비입고/정비대기'가 실제 대여소가 아니라 자전거 회수·정비 운영 로그임을 발견(평균 이용시간 4배 이상 차이로 검증), 이를 제외하고 인기 대여소·경로 재분석
 - Tags: Python, Pandas, EDA, Outlier Detection
-- Detail: https://github.com/seongmi98/tashu-bikeshare-data-quality
+- Detail: project-tashu.html (GitHub: https://github.com/seongmi98/tashu-bikeshare-data-quality)
 - 스타일 원칙: 메인 프로젝트 카드(.project-card-plain)와 다른 가벼운 톤(.side-project-row: 대시 보더, 작은 글씨, 지표 강조 없음)으로 표시해 "센서·영상 데이터" 메인 내러티브를 흐리지 않도록 함
 
 ## Tech Stack (텍스트 목록, 아이콘 없음)
@@ -84,11 +97,11 @@
 ## 학회 발표
 
 - [1] Oral · 2025 · (사)한국농업기계학회 2025 추계학술대회 · 구두 발표
-  - KR: 드론 RGB 영상 기반 밭작물 분류를 위한 객체 인식 모델 개발
+  - KR: 드론 RGB 영상 기반 밭작물 분류를 위한 Segmentation 모델 개발
   - EN: Development of Segmentation Model for Field Crop Classification Based on Drone RGB Imagery
 - [2] Poster · 1st Author · 2026 · (사)한국농업기계학회 2026 춘계학술대회 · 포스터
-  - 제목: 분광/초분광 데이터를 활용한 균사체 복합소재 기계적 물성 비파괴 예측 모델 개발
-  - 세부: Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 R² 0.78–0.89
+  - 제목: 분광 및 초분광 영상을 이용한 균사체 기계적 물성 비파괴 예측 모델 구축
+  - 세부: Vis-NIR·SWIR 분광 및 초분광 센서 4종 비교, 회귀 R² 0.78~0.89
 - [3] Poster · 1st Author · 2024 · CIGR 2024 (International Commission of Agricultural and Biosystems Engineering) · 포스터
   - 제목(EN): Development of Kimchi Cabbage and Onion Robot Object Detection Model Based on YOLO
   - 세부: YOLO 기반 객체 탐지, 증강 후 데이터셋 6,020장 구축
@@ -100,9 +113,9 @@ Oral/Poster는 index.html에서 배지 색으로 구분(`badge-oral` 채움 / `b
 
 ## 학력 / 경력 / 자격
 
-- 학력(석사): 농업기계공학과, 국립순천대학교 대학원 · 공학석사 · 2023.03–2025.02 · 스마트농업공학기술연구실 (지도교수 김혁주) · 학점 4.44/4.5 · 학위논문: 딥러닝 알고리즘을 이용한 객체 탐지 기술 연구
-- 학력(학사): 융합바이오시스템기계공학과, 국립순천대학교 · 공학사 · 2019.03–2023.02 · 학점 4.06/4.5
-- 경력: 계약연구원, 서울대학교 산학협력단 (바이오시스템공학과 생체물성연구실) · 2025.03 – 현재 · Seoul, Korea
+- 학력(석사): 농업기계공학과, 국립순천대학교 대학원 · 공학석사 · 2023.03~2025.02 · 스마트농업공학기술연구실 (지도교수 김혁주) · 학점 4.44/4.5 · 학위논문: 딥러닝 알고리즘을 이용한 객체 탐지 기술 연구
+- 학력(학사): 융합바이오시스템기계공학과, 국립순천대학교 · 공학사 · 2019.03~2023.02 · 학점 4.06/4.5
+- 경력: 연구원, 서울대학교 농업생명과학연구원 (바이오시스템공학과 생체물성연구실) · 2025.03~2026.08 · Seoul, Korea
 - 자격: 일반기계기사, 한국산업인력공단 · 2023.12
 
 ## Footer / Contact

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>대전 공공자전거 '타슈' 데이터 분석 | 선성미</title>
+        <meta name="description" content="타슈 대여이력 132만 건과 기상 데이터를 결합한 이용 패턴 분석, 운영 로그 이상치 검증.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://seongmi98.github.io/project-tashu">
+        <meta property="og:title" content="대전 공공자전거 '타슈' 데이터 분석 | 선성미">
+        <meta property="og:description" content="타슈 대여이력 132만 건과 기상 데이터를 결합한 이용 패턴 분석, 운영 로그 이상치 검증.">
+        <meta property="og:image" content="https://seongmi98.github.io/img/og-card.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="대전 공공자전거 '타슈' 데이터 분석 | 선성미">
+        <meta name="twitter:description" content="타슈 대여이력 132만 건과 기상 데이터를 결합한 이용 패턴 분석, 운영 로그 이상치 검증.">
+        <meta name="twitter:image" content="https://seongmi98.github.io/img/og-card.png">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+    <body>
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu" id="mainNav">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container box_1620">
+                        <a class="navbar-brand logo_h logo_text" href="./">선성미<span class="name-en">Seongmi Sun</span></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="portfolio">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Project Detail</h2>
+                        <div class="page_link">
+                            <a href="./">Home</a>
+                            <a href="portfolio">Portfolio</a>
+                            <a href="project-tashu">타슈 대여 데이터 분석</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+        <!--================Portfolio Details Area =================-->
+        <section class="portfolio_details_area p_120">
+            <div class="container">
+                <div class="portfolio_details_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="band-bar-wrap">
+                                <div class="band-bar band-nir"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio_right_text">
+                                <h4>대전 공공자전거 '타슈' 대여 데이터 분석 및 이상치 검증</h4>
+                                <ul class="list">
+                                    <li><span>구분</span>: 석사 과정 수업 기말 과제 (통신용집적회로)</li>
+                                    <li><span>데이터</span>: 대여이력 2022.08~2022.12 · 약 132만 건 + 기상청 기온·강수량</li>
+                                    <li><span>사용 기술</span>: Python, Pandas, Matplotlib, Seaborn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-body">
+                    <div class="case-overview" id="overview">
+                        <span class="case-kicker">개요</span>
+                        <p>타슈 대여이력 약 132만 건에 기상 데이터를 결합해 요일·시간대 패턴, 날씨 영향, 인기 대여소와 경로를 분석함. 이후 재점검에서 인기 대여소 1위가 실제 대여소가 아닌 정비 거점의 운영 로그(전체의 5.1%)임을 발견해, 이를 제외하고 다시 분석함.</p>
+                    </div>
+                    <nav class="case-toc">
+                        <a href="#overview">개요</a>
+                        <a href="#data">데이터</a>
+                        <a href="#result">결과</a>
+                        <a href="#verify">후속 검증</a>
+                        <a href="#conclusion">결론</a>
+                    </nav>
+
+                    <div class="case-section" id="problem">
+                        <span class="case-kicker">문제 정의</span>
+                        <h3>배경</h3>
+                        <p>석사 과정 수업(통신용집적회로) 기말 과제로 수행한 정형 데이터 분석임. 대전시 공영자전거 '타슈'의 대여이력에 기상 데이터를 결합해 <b>언제, 어디서, 어떤 날씨에</b> 이용이 몰리는지를 수치로 확인하는 것이 목표였음.</p>
+                    </div>
+
+                    <div class="case-section" id="data">
+                        <span class="case-kicker">데이터</span>
+                        <h3>데이터 구성</h3>
+                        <table class="case-table">
+                            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+                            <tbody>
+                                <tr><td>대여이력</td><td>공공데이터포털 · 대전교통공사 타슈 대여이력 (2022.08~2022.12, 5개월, <span class="num">1,325,716</span>건)</td></tr>
+                                <tr><td>주요 컬럼</td><td>자전거번호, 대여/반납 일시·대여소·좌표, 이용시간(분), 이용거리(km)</td></tr>
+                                <tr><td>기상</td><td>기상청 일별 기온, 강수량</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="case-section" id="result">
+                        <span class="case-kicker">결과</span>
+                        <h3>① 요일·시간대 패턴</h3>
+                        <p>요일과 시간대별 대여건수를 히트맵으로 정리함. 평일은 출퇴근 시간대(<span class="num">7~9시</span>, <span class="num">17~20시</span>)에, 주말은 오후(<span class="num">13~22시</span>)에 대여가 집중됨. 평일과 주말의 수요 구조가 다르다는 점을 근거로 <b>시간대별 스테이션 배치 최적화</b>를 제안함.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">결과</span>
+                        <h3>② 날씨와 이용량</h3>
+                        <table class="case-table">
+                            <thead><tr><th>변수</th><th>일별 대여건수와의 상관계수</th></tr></thead>
+                            <tbody>
+                                <tr><td>강수량</td><td><span class="num">−0.32</span></td></tr>
+                                <tr><td>기온</td><td><span class="num">−0.055</span></td></tr>
+                            </tbody>
+                        </table>
+                        <p>관측 기간(8~12월) 안에서는 기온보다 <b>강수량의 영향이 뚜렷</b>했음. 비 오는 날 이용이 줄어든다는 것을 수치로 확인함.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <span class="case-kicker">결과</span>
+                        <h3>③ 인기 대여소와 경로</h3>
+                        <p>대여·반납 대여소와 이동 경로 상위 10곳을 집계해, 한밭수목원, 카이스트 캠퍼스처럼 <b>공원과 학교 주변</b>에 이용이 몰린다는 것을 확인함.</p>
+                    </div>
+
+                    <div class="case-section" id="verify">
+                        <span class="case-kicker">후속 검증</span>
+                        <h3>운영 로그가 섞인 데이터</h3>
+                        <p>과제 이후 분석을 다시 열어 점검하던 중, 인기 대여소 1위로 '타슈관제센터'가 나온 것이 이상해 원본을 다시 확인함. 이곳은 일반 대여소가 아니라 <b>자전거를 회수해 정비하는 운영 거점</b>(정비입고/정비대기)이었음.</p>
+                        <table class="case-table">
+                            <thead><tr><th>구분</th><th>평균 이용시간</th><th>평균 이동거리</th><th>건수</th></tr></thead>
+                            <tbody>
+                                <tr><td>관제센터(정비)</td><td>96.7분</td><td>7.07km</td><td>67,440건 (5.1%)</td></tr>
+                                <tr><td>일반 이용자</td><td>22.6분</td><td>3.44km</td><td>1,114,441건</td></tr>
+                            </tbody>
+                        </table>
+                        <p>관제센터 관련 건은 평균 이용시간이 일반 이용자의 <b>4배 이상</b>이라, 실제 탑승이 아니라 회수 과정에서 찍힌 운영 로그로 판단함. 이를 제외하고 다시 집계하자 한밭수목원, 무역전시관입구, 유성구청, 타임월드, 충남대학교 학생회관 순으로 실제 이용 패턴이 드러남.</p>
+                    </div>
+
+                    <div class="case-section" id="conclusion">
+                        <span class="case-kicker">결론</span>
+                        <h3>정리</h3>
+                        <p>공공데이터에는 이용자 기록과 운영 기록이 섞여 있을 수 있고, 이를 걸러내지 않으면 순위 같은 단순 집계부터 왜곡됨. <b>결과가 그럴듯해 보여도 원본 단위로 다시 확인한다</b>는 원칙을 정형 데이터에서도 확인한 과제임.</p>
+                        <p><a href="https://github.com/seongmi98/tashu-bikeshare-data-quality" target="_blank" rel="noopener">GitHub 저장소 ↗</a></p>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Outlier Detection</span>
+                        <span class="tag">Public Data</span>
+                    </div>
+                    </div><!-- /.case-body -->
+                </div>
+            </div>
+        </section>
+        <!--================End Portfolio Details Area =================-->
+
+        <!--================Footer Area =================-->
+        <footer class="footer_area p_120">
+            <div class="container">
+                <div class="row footer_inner">
+                    <div class="col-lg-5 col-sm-6">
+                        <aside class="f_widget ab_widget">
+                            <div class="f_title">
+                                <h3>About Me</h3>
+                            </div>
+                            <p>객체 탐지와 영상 분할을 중심으로 컴퓨터비전 모델을 개발하는 엔지니어입니다.</p>
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </aside>
+                    </div>
+                    <div class="col-lg-5 col-sm-6">
+                        <aside class="f_widget">
+                            <div class="f_title">
+                                <h3>Contact</h3>
+                            </div>
+                            <p><a href="mailto:ddl05059@naver.com">ddl05059@naver.com</a></p>
+                            <p><a href="https://github.com/seongmi98" target="_blank" rel="noopener">github.com/seongmi98</a></p>
+                        </aside>
+                    </div>
+                    <div class="col-lg-2">
+                        <aside class="f_widget social_widget">
+                            <div class="f_title">
+                                <h3>Follow Me</h3>
+                            </div>
+                            <ul class="list">
+                                <li><a href="https://github.com/seongmi98" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li>
+                                <li><a href="mailto:ddl05059@naver.com"><i class="fa fa-envelope"></i></a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--================End Footer Area =================-->
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
